@@ -116,33 +116,5 @@ float angle_difference(float angle1, float angle2);
  */
 EulerAngles quaternion_to_euler_zyx(Quaternion q);
 
-/**
- * @brief 从像素坐标计算角度（使用相机焦距）
- * 
- * 使用相机参数将像素差转换为实际角度
- * 公式：θ = atan2(pixel, focal_length)
- * 
- * @param pixel 像素坐标差
- * @param focal_length 相机焦距（像素）
- * @return float 角度（弧度）
- */
-float pixel_to_angle(float pixel, float focal_length);
-
-/**
- * @brief 基于相机参数和面积估算距离
- * 
- * 使用相机焦距和目标实际尺寸估算距离
- * 公式：距离 = (实际尺寸 × 焦距) / 像素尺寸
- * 
- * @param pixel_area 像素面积
- * @param real_size 目标实际尺寸（直径，米）
- * @param focal_length 相机焦距（像素）
- * @return float 估计距离（米）
- */
-float estimate_distance_from_camera(float pixel_area, float real_size, float focal_length);
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* GUIDANCE_MATH_H */
