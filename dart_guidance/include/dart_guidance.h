@@ -26,11 +26,13 @@ class Guidance
          * 
          * @param dx x方向像素差（目标x - 图像中心x）
          * @param dy y方向像素差（目标y - 图像中心y）
+         * @param qx,qy,qz,qw 四元数
+         * @param target_volocity 弹目接近速度
          * @param timestamp 时间戳（毫秒）
          * 
          * @note 每帧图像处理完成后调用
          */
-        void guidance_update(float dx, float dy, uint32_t timestamp);
+        void guidance_update(float dx, float dy, float qw, float qx, float qy, float qz,float target_velocity, uint32_t timestamp);
 
         /**
          * @brief 计算制导指令（主函数）
@@ -40,6 +42,13 @@ class Guidance
          * @note 在控制周期（如100Hz）调用，返回俯仰和偏航方向的加速度指令
          */
         GuidanceOutput guidance_calculate(void);
+
+        /**
+         * @brief 更新发射标志位
+         * @note 在发射之后在调用，才能输出控制指令
+         * 
+         */     
+        void fire(void);
 
         /**
          * @brief 重置系统状态
@@ -58,6 +67,8 @@ class Guidance
         uint32_t pre_timestamp = 0; ///< 上一次更新的时间戳
         float prev_los_angle_yaw = 0.0; ///< 上一次的视线角
         float prev_los_angle_pitch = 0.0;
+        float los_angle_yaw_velocity = 0.0;
+        float los_angle_pitch_velocity = 0.0;
 
         //基础计算参数
         Quaternion reference_quat; ///< 基准四元数

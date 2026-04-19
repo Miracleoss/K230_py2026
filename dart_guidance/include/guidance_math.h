@@ -116,5 +116,8 @@ float angle_difference(float angle1, float angle2);
  */
 EulerAngles quaternion_to_euler_zyx(Quaternion q);
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* GUIDANCE_MATH_H */

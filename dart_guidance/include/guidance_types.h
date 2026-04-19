@@ -60,6 +60,9 @@ typedef struct {
     
     // 滤波器参数
     float filter_alpha;  ///< 低通滤波器系数 (0-1)
+
+    float max_accel_yaw;
+    float max_accel_pitch;
 } GuidanceConfig;
 
 
