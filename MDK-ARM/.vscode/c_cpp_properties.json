@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compileCommands": [
+                "D:\\Work_stm\\ZLLC_Guided_Dart\\MDK-ARM\\build\\Guided_Dart\\compile_commands.json"
+            ]
+        }
+    ],
+    "version": 4
+}
