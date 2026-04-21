@@ -24,6 +24,7 @@ uint32_t g_last_k230_rx_ms = 0U;
 
 uint8_t g_k230_rx_buffer[kK230RxBufferSize] = {0U};
 
+// 设备实例化
 Bmi088 g_bmi088(&hspi1);
 K230 g_k230;
 Control g_control;
@@ -125,6 +126,7 @@ void K230RxCallback(UART_HandleTypeDef* huart, uint8_t* buffer, uint16_t length,
 
 bool InitK230Rx()
 {
+	// 配置 UART 接收事件处理项 绑定相关信息
 	DrvUART::RxEventHandler handler = {};
 	handler.huart = &huart1;
 	handler.buffer = g_k230_rx_buffer;
@@ -132,10 +134,11 @@ bool InitK230Rx()
 	handler.callback = &K230RxCallback;
 	handler.userContext = nullptr;
 
+	// 注册 UART 的g_rx_handlers[]表
 	if (!DrvUART::RegisterRxEventHandler(handler)) {
 		return false;
 	}
-
+	// 启动 UART DMA 空闲接收
 	DrvUART::StartReceive_DMA_Idle(&huart1, g_k230_rx_buffer, kK230RxBufferSize);
 	return true;
 }

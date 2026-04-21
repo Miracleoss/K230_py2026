@@ -1,4 +1,5 @@
 #include "app_task.h"
+#include "drv_uart.h"
 
 #include "Config.h"
 
@@ -56,6 +57,11 @@ extern "C" void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 		g_div20_count = 0U;
 		task_20ms_flag = true;
 	}
+}
+
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
+{
+  DrvUART_RxEventIRQHandler(huart, Size);
 }
 
 extern "C" bool App_Task_Init(void)

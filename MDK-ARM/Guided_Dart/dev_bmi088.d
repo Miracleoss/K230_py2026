@@ -23,5 +23,7 @@ guided_dart/dev_bmi088.o: ..\User\Device\Src\dev_bmi088.cpp \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
+  ..\User\Config\Config.h ..\User\Config\pin_def.h \
+  ..\User\Config\fc_param.h ..\User\Config\hw_config.h \
   ..\User\Driver\Inc\drv_delay.h ..\User\Driver\Inc\drv_gpio.h \
   ..\User\Driver\Inc\drv_spi.h

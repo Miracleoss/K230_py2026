@@ -23,4 +23,6 @@ guided_dart/dev_motor.o: ..\User\Device\Src\dev_motor.cpp \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
-  ..\Core\Inc\tim.h ..\User\Driver\Inc\drv_tim.h
+  ..\User\Config\Config.h ..\User\Config\pin_def.h \
+  ..\User\Config\fc_param.h ..\User\Config\hw_config.h ..\Core\Inc\tim.h \
+  ..\User\Driver\Inc\drv_tim.h

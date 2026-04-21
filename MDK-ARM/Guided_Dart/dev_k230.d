@@ -23,4 +23,6 @@ guided_dart/dev_k230.o: ..\User\Device\Src\dev_k230.cpp \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
+  ..\User\Config\Config.h ..\User\Config\pin_def.h \
+  ..\User\Config\fc_param.h ..\User\Config\hw_config.h \
   ..\User\Driver\Inc\drv_uart.h

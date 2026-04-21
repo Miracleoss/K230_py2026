@@ -46,8 +46,8 @@ static constexpr float kGuidanceCmdLimitG = 8.0f;
 static constexpr ThreeLoopPidParam kInitPid = {
 	// Roll
 	{
-		{1.20f, 0.00f, 0.02f, 2.0f, 30.0f}, // overload loop
-		{0.55f, 0.00f, 0.01f, 1.5f, 25.0f}, // rate loop
+		{0.0f, 0.00f, 0.0f, 2.0f, 30.0f}, // overload loop
+		{0.0f, 0.00f, 0.0f, 1.5f, 25.0f}, // rate loop
 	},
 	// Pitch
 	{
