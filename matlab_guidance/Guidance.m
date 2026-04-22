@@ -48,8 +48,8 @@ classdef Guidance < handle
                 output.accel_pitch = 0; output.accel_yaw = 0; output.valid = false; return;
             end
             
-            cam_x = (obj.g_input.pixel_dx - obj.g_config.camera_matrix(3)) / obj.g_config.camera_matrix(1);
-            cam_y = (obj.g_input.pixel_dy - obj.g_config.camera_matrix(6)) / obj.g_config.camera_matrix(5);
+            cam_x = obj.g_input.pixel_dx / obj.g_config.camera_matrix(1);
+            cam_y = obj.g_input.pixel_dy / obj.g_config.camera_matrix(5);
             cam_z = 1.0;
             
             dart_x = cam_z; dart_y = cam_x; dart_z = cam_y;
