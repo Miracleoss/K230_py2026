@@ -1,4 +1,4 @@
-,,,，，，，，，，，，，，，import time, os, gc, sys, math
+import time, os, gc, sys, math
 
 from media.sensor import *
 from media.display import *
@@ -6,7 +6,7 @@ from media.media import *
 from machine import PWM, FPIOA, UART
 import socket
 import network
-import struct，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，
+import struct
 from machine import SPI
 import struct  # 导入struct模块进行字节流转换
 
@@ -16,9 +16,7 @@ DETECT_HEIGHT = 480
 SERVO_ZERO = 0.025*100
 SERVO_PI = 0.125*100
 SERVO_MID = 0.075*100
-，，，，，，，，，，，，，，，，，，，，，
 MAX_PACKET_SIZE = 1400
-，，，，，，，,,,,,,,,,，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，，
 # 希望过滤的最小色块
 FLITER_MINI_PART = 0
 

@@ -1,0 +1,6 @@
+*.csv
+__pycache__/
+.devcontainer/
+.vscode/
+*.pdf
+*.o
