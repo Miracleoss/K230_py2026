@@ -27,7 +27,7 @@ class Guidance
          * @param dx x方向像素差（目标x - 图像中心x）
          * @param dy y方向像素差（目标y - 图像中心y）
          * @param qx,qy,qz,qw 四元数
-         * @param target_volocity 弹目接近速度
+         * @param target_velocity 弹目接近速度
          * @param timestamp 时间戳（毫秒）
          * 
          * @note 每帧图像处理完成后调用
@@ -59,7 +59,6 @@ class Guidance
 
     private:
         //参数结构体
-        GuidanceOutput g_output;
         GuidanceInput g_input;
         GuidanceConfig g_config;
 
@@ -67,8 +66,8 @@ class Guidance
         uint32_t pre_timestamp = 0; ///< 上一次更新的时间戳
         float prev_los_angle_yaw = 0.0; ///< 上一次的视线角
         float prev_los_angle_pitch = 0.0;
-        float los_angle_yaw_velocity = 0.0;
-        float los_angle_pitch_velocity = 0.0;
+        float prev_los_angle_yaw_velocity = 0.0;
+        float prev_los_angle_pitch_velocity = 0.0;
 
         //基础计算参数
         Quaternion reference_quat; ///< 基准四元数
@@ -77,6 +76,7 @@ class Guidance
         bool is_fire = false;//fire标识符
         bool initialized = false; ///< 是否已初始化
         bool reference_set = false; ///< 是否已设置基准四元数
+        bool config_initialized = false; ///< 配置是否已初始化
 };
 
 

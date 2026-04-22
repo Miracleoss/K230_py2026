@@ -8,7 +8,9 @@
 static const GuidanceConfig DEFAULT_CONFIG = {
     .nav_ratio = 4.0f,           // 导航比 4.0
     .camera_matrix = {500.0f, 0.0f, 320.0f, 0.0f, 500.0f, 240.0f, 0.0f, 0.0f, 1.0f}, // 焦距 500像素
-    .filter_alpha = 0.3f         // 滤波器系数 0.3
+    .filter_alpha = 0.3f,        // 滤波器系数 0.3
+    .max_accel_yaw = 100.0f,     // 偏航最大加速度 100 m/s²
+    .max_accel_pitch = 100.0f    // 俯仰最大加速度 100 m/s²
 };
 
 void Guidance::guidance_init(const GuidanceConfig& config, 
@@ -30,10 +32,6 @@ void Guidance::guidance_init(const GuidanceConfig& config,
     this->prev_los_angle_yaw = 0.0f;
     this->prev_los_angle_pitch = 0.0f;
     
-    // 初始化输出
-    this->g_output.accel_pitch = 0.0f;
-    this->g_output.accel_yaw = 0.0f;
-    this->g_output.valid = false;
     
     // 初始化输入
     this->g_input.pixel_dx = 0.0f;
@@ -42,6 +40,9 @@ void Guidance::guidance_init(const GuidanceConfig& config,
     this->g_input.target_velocity = 0.0f;
     this->g_input.timestamp = 0;
 }
+
+
+
 
 void Guidance::fire(){
     this->is_fire = true;
@@ -80,25 +81,6 @@ GuidanceOutput Guidance::guidance_calculate(void) {
         GuidanceOutput invalid_output = {0};
         invalid_output.valid = false;
         return invalid_output;
-    }
-    
-    // 检查时间戳是否合理（防止除零错误）
-    if (this->pre_timestamp == 0) {
-        this->pre_timestamp = this->g_input.timestamp;
-        this->prev_los_angle_yaw = 0.0f;
-        this->prev_los_angle_pitch = 0.0f;
-        
-        GuidanceOutput zero_output = {0};
-        zero_output.valid = true;
-        return zero_output;
-    }
-    
-    // 计算时间差（毫秒转换为秒）
-    float dt = (float)(this->g_input.timestamp - this->pre_timestamp) / 1000.0f;
-    if (dt <= 0.0f || dt > 1.0f) { // 防止无效时间差
-        GuidanceOutput output;
-        output.valid = false;
-        return output;
     }
     
     // 调用核心算法
@@ -140,13 +122,34 @@ GuidanceOutput Guidance::guidance_calculate(void) {
     float los_angle_yaw = safe_atan2(inertial.y, inertial.x);
     float los_angle_pitch = safe_atan2(-inertial.z, sqrtf(inertial.x * inertial.x + inertial.y * inertial.y));
     
+    // 检查时间戳是否合理（防止除零错误）
+    if (this->pre_timestamp == 0) {
+        // 第一次计算：记录当前时间戳和视线角，返回零输出
+        // 需要等到下一次调用才能计算角速度
+        this->pre_timestamp = this->g_input.timestamp;
+        this->prev_los_angle_yaw = los_angle_yaw;
+        this->prev_los_angle_pitch = los_angle_pitch;
+        
+        GuidanceOutput zero_output = {0};
+        zero_output.valid = true;
+        return zero_output;
+    }
+    
+    // 计算时间差（毫秒转换为秒）
+    float dt = (float)(this->g_input.timestamp - this->pre_timestamp) / 1000.0f;
+    if (dt <= 0.0f || dt > 1.0f) { // 防止无效时间差
+        GuidanceOutput output;
+        output.valid = false;
+        return output;
+    }
+    
     // 计算视线角速度
     float los_angle_yaw_velocity = (los_angle_yaw - this->prev_los_angle_yaw) / dt;
     float los_angle_pitch_velocity = (los_angle_pitch - this->prev_los_angle_pitch) / dt;
     
     // 应用低通滤波器平滑角速度
-    los_angle_yaw_velocity = low_pass_filter(los_angle_yaw_velocity, this->prev_los_angle_yaw, this->g_config.filter_alpha);
-    los_angle_pitch_velocity = low_pass_filter(los_angle_pitch_velocity, this->prev_los_angle_pitch, this->g_config.filter_alpha);
+    los_angle_yaw_velocity = low_pass_filter(los_angle_yaw_velocity, this->prev_los_angle_yaw_velocity, this->g_config.filter_alpha);
+    los_angle_pitch_velocity = low_pass_filter(los_angle_pitch_velocity, this->prev_los_angle_pitch_velocity, this->g_config.filter_alpha);
     
     // 计算制导指令（比例导引）
     float n_yaw = this->g_config.nav_ratio * this->g_input.target_velocity * los_angle_yaw_velocity;
@@ -159,6 +162,8 @@ GuidanceOutput Guidance::guidance_calculate(void) {
     // 更新历史数据
     this->prev_los_angle_yaw = los_angle_yaw;
     this->prev_los_angle_pitch = los_angle_pitch;
+    this->prev_los_angle_pitch_velocity = los_angle_pitch_velocity;
+    this->prev_los_angle_yaw_velocity = los_angle_yaw_velocity;
     this->pre_timestamp = this->g_input.timestamp;
     
     // 准备输出
@@ -178,11 +183,6 @@ void Guidance::guidance_reset(void) {
     this->pre_timestamp = 0;
     this->prev_los_angle_yaw = 0.0f;
     this->prev_los_angle_pitch = 0.0f;
-    
-    // 重置输出
-    this->g_output.accel_pitch = 0.0f;
-    this->g_output.accel_yaw = 0.0f;
-    this->g_output.valid = false;
     
     // 重置输入
     this->g_input.pixel_dx = 0.0f;
