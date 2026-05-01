@@ -31,8 +31,8 @@ namespace DrvSPI {
 bool TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* txData, uint8_t* rxData, uint16_t size, uint32_t timeout = 10U);
 
 /**
- * @brief 读取 SPI 设备连续寄存器。
- * @details 软件控制片选，读格式为：地址（读位）+ dummy 时钟读取多字节。
+ * @brief 读取 SPI 设备连续寄存器（无 dummy 字节）。
+ * @details 软件控制片选，读格式为：地址（读位）+ 数据字节。适用于 BMI088 陀螺仪。
  * @param hspi SPI 句柄。
  * @param csPort 片选 GPIO 端口。
  * @param csPin 片选 GPIO 引脚。
@@ -42,6 +42,19 @@ bool TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* txData, uint8_t* rxData, 
  * @return true：读取成功；false：读取失败。
  */
 bool ReadRegisters(SPI_HandleTypeDef* hspi, GPIO_TypeDef* csPort, uint16_t csPin, uint8_t regAddr, uint8_t* pData, uint16_t size);
+
+/**
+ * @brief 读取 SPI 设备连续寄存器（带 dummy 字节）。
+ * @details 软件控制片选，读格式为：地址（读位）+ dummy 字节 + 数据字节。适用于 BMI088 加速度计。
+ * @param hspi SPI 句柄。
+ * @param csPort 片选 GPIO 端口。
+ * @param csPin 片选 GPIO 引脚。
+ * @param regAddr 起始寄存器地址。
+ * @param pData 数据输出缓冲区。
+ * @param size 读取字节数。
+ * @return true：读取成功；false：读取失败。
+ */
+bool ReadRegistersWithDummy(SPI_HandleTypeDef* hspi, GPIO_TypeDef* csPort, uint16_t csPin, uint8_t regAddr, uint8_t* pData, uint16_t size);
 
 /**
  * @brief 写 SPI 设备单个寄存器。

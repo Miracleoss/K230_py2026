@@ -28,7 +28,7 @@ public:
 	 * @param htim PWM 定时器句柄。
 	 * @param channel PWM 输出通道。
 	 */
-	explicit Motor(TIM_HandleTypeDef* htim = nullptr, uint32_t channel = PinDef::Motor::DEFAULT_PWM_CHANNEL);
+	explicit Motor(TIM_HandleTypeDef* htim = nullptr, uint32_t channel = 4U);
 
 	/**
 	 * @brief 初始化电机 PWM 输出。

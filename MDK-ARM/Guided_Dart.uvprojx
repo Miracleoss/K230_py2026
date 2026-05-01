@@ -664,6 +664,16 @@
               <FileType>5</FileType>
               <FilePath>..\User\Device\Inc\dev_servo.h</FilePath>
             </File>
+            <File>
+              <FileName>dev_temp_ctrl.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\User\Device\Src\dev_temp_ctrl.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>dev_temp_ctrl.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Device\Inc\dev_temp_ctrl.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

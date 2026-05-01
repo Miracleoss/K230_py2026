@@ -1,6 +1,5 @@
-guided_dart/app_flight.o: ..\User\App\Src\app_flight.cpp \
-  ..\User\App\Inc\app_flight.h ..\User\Config\Config.h \
-  ..\User\Config\pin_def.h ..\Core\Inc\main.h \
+guided_dart/dev_temp_ctrl.o: ..\User\Device\Src\dev_temp_ctrl.cpp \
+  ..\User\Device\Inc\dev_temp_ctrl.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal.h \
   ..\Core\Inc\stm32f1xx_hal_conf.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h \
@@ -24,9 +23,4 @@ guided_dart/app_flight.o: ..\User\App\Src\app_flight.cpp \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_tim_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
-  ..\User\Config\fc_param.h ..\User\Config\hw_config.h \
-  ..\User\Algorithm\Inc\alg_control.h ..\User\Device\Inc\dev_bmi088.h \
-  ..\User\Device\Inc\dev_k230.h ..\User\Device\Inc\dev_servo.h \
-  ..\User\Device\Inc\dev_temp_ctrl.h ..\User\Driver\Inc\drv_uart.h \
-  ..\User\Utils\Inc\vofa.h ..\Core\Inc\spi.h ..\Core\Inc\tim.h \
-  ..\Core\Inc\usart.h
+  ..\User\Driver\Inc\drv_tim.h

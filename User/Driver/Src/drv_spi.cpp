@@ -8,7 +8,7 @@
 
 #include "drv_gpio.h"
 
-// SPI 读寄存器地址位掩码（bit7=1 表示读）。
+// SPI 读寄存器地址位掩码（bit0=1 表示读）。
 constexpr uint8_t kReadMask = 0x80U;
 // SPI 写寄存器地址位掩码（bit7=0 表示写）。
 constexpr uint8_t kWriteMask = 0x7FU;
@@ -77,6 +77,56 @@ namespace DrvSPI
 		}
 
 		// 释放片选，结束 SPI 帧事务。
+		DrvGPIO::SetPin(csPort, csPin);
+		return result;
+	}
+
+	/**
+	 * @brief 连续读取寄存器（带 dummy 字节）。
+	 * @details BMI088 加速度计读时序：地址字节后需额外发送 1 个 dummy 字节，
+	 *          MISO 上该字节数据无效，之后才是有效载荷。
+	 * @param hspi SPI 句柄。
+	 * @param csPort 片选端口。
+	 * @param csPin 片选引脚。
+	 * @param regAddr 起始寄存器地址。
+	 * @param pData 数据输出缓冲区。
+	 * @param size 读取长度。
+	 * @return true：成功；false：失败。
+	 */
+	bool ReadRegistersWithDummy(SPI_HandleTypeDef* hspi, GPIO_TypeDef* csPort, uint16_t csPin, uint8_t regAddr, uint8_t* pData, uint16_t size)
+	{
+		if ((hspi == nullptr) || (csPort == nullptr) || (pData == nullptr) || (size == 0U)) {
+			return false;
+		}
+
+		bool result = true;
+		uint8_t tx_addr = static_cast<uint8_t>(regAddr | kReadMask);
+		uint8_t rx_addr = 0U;
+
+		DrvGPIO::ResetPin(csPort, csPin);
+
+		// 地址字节。
+		result = TransmitReceive(hspi, &tx_addr, &rx_addr, 1U, 1000);
+		// if (result) {
+		// 	// Dummy 字节：MISO 上此字节无效，必须丢弃。
+		// 	uint8_t tx_dummy0 = 0x55U;
+		// 	uint8_t rx_dummy = 0U;
+		// 	result = TransmitReceive(hspi, &tx_dummy0, &rx_dummy, 1U, kSpiTimeoutMs);
+		// }
+		if (result) {
+			for (uint16_t i = 0U; i < size; ++i) {
+				uint8_t tx_dummy = 0x55U;
+				uint8_t rx_byte = 0U;
+
+				result = TransmitReceive(hspi, &tx_dummy, &rx_byte, 1U, 1000);
+				if (!result) {
+					break;
+				}
+
+				pData[i] = rx_byte;
+			}
+		}
+
 		DrvGPIO::SetPin(csPort, csPin);
 		return result;
 	}

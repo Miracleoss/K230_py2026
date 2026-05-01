@@ -78,8 +78,22 @@ public:
 	 */
 	bool ReadSensor(Data* outData);
 
+	/**
+	 * @brief 读取 BMI088 内部温度传感器。
+	 * @param outTempC 输出温度值，单位 ℃。
+	 * @return true：读取成功；false：读取失败。
+	 */
+	bool ReadTemperature(float* outTempC);
+
 	/** 最近一次有效读取的传感器数据（供调试 Watch 窗口查看）。 */
 	Data last_data_;
+
+	/** 滤波后的数据（低通滤波输出）。 */
+	Data filtered_data_;
+	/** 滤波系数 alpha（0~1，越小滤波越强，默认 0.1）。 */
+	float filter_alpha_ = 0.1f;
+	/** 滤波是否已初始化（首次读取时直接赋值）。 */
+	bool filter_inited_ = false;
 
 private:
 	/** 写加速度计寄存器。 */

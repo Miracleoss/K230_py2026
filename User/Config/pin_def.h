@@ -49,12 +49,12 @@ static constexpr uint32_t SERVO_CH4 = TIM_CHANNEL_4;
 
 } // namespace Servo
 
-namespace Motor {
+namespace TempCtrl {
 
-// 默认电机输出通道（当前工程使用 TIM3_CH3）
-static constexpr uint32_t DEFAULT_PWM_CHANNEL = TIM_CHANNEL_3;
+// BMI088 加热 PWM 输出通道（TIM3_CH3, PB0）
+static constexpr uint32_t HEATER_PWM_CHANNEL = TIM_CHANNEL_3;
 
-} // namespace Motor
+} // namespace TempCtrl
 
 namespace Debug {
 

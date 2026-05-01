@@ -34,6 +34,7 @@
 "guided_dart\dev_k230.o"
 "guided_dart\dev_servo.o"
 "guided_dart\dev_motor.o"
+"guided_dart\dev_temp_ctrl.o"
 "guided_dart\drv_delay.o"
 "guided_dart\drv_gpio.o"
 "guided_dart\drv_spi.o"

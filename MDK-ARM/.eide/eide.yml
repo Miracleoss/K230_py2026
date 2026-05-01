@@ -85,6 +85,8 @@ virtualFolder:
         - path: ../User/Device/Inc/dev_k230.h
         - path: ../User/Device/Inc/dev_motor.h
         - path: ../User/Device/Inc/dev_servo.h
+        - path: ../User/Device/Src/dev_temp_ctrl.cpp
+        - path: ../User/Device/Inc/dev_temp_ctrl.h
       folders: []
     - name: Driver
       files:

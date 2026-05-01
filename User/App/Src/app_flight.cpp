@@ -6,6 +6,7 @@
 #include "dev_bmi088.h"
 #include "dev_k230.h"
 #include "dev_servo.h"
+#include "dev_temp_ctrl.h"
 #include "drv_uart.h"
 #include "vofa.h"
 #include "spi.h"
@@ -17,6 +18,7 @@ Bmi088 g_bmi088(&hspi1);
 K230 g_k230;
 Control g_control;
 Servo g_servo(&htim1);
+TempCtrl g_temp_ctrl(&htim3, PinDef::TempCtrl::HEATER_PWM_CHANNEL);
 
 namespace {
 
@@ -24,6 +26,8 @@ constexpr uint32_t kFlightPeriodMs = HwConfig::App::kFlightPeriodMs;
 constexpr uint32_t kK230TimeoutMs = HwConfig::App::kK230TimeoutMs;
 constexpr float kCmdLimitG = FcParam::Control::kGuidanceCmdLimitG;
 constexpr uint16_t kK230RxBufferSize = HwConfig::App::kK230RxBufferSize;
+// BMI088 目标工作温度（℃），减小温漂。
+constexpr float kTargetTempC = 40.0f;
 
 bool g_app_inited = false;
 uint32_t g_last_run_ms = 0U;
@@ -155,6 +159,8 @@ extern "C" bool App_Flight_Init(void)
 	ok = ok && g_bmi088.Init();
 	ok = ok && g_servo.Init();
 	ok = ok && InitK230Rx();
+	ok = ok && g_temp_ctrl.Init();
+	g_temp_ctrl.SetTarget(kTargetTempC);
 
 	// 与舵机设备层限幅保持一致。
 	g_control.SetFinLimit(FcParam::Servo::kAngleLimitDeg);
@@ -187,7 +193,7 @@ extern "C" void App_Flight_Task(void)
 	}
 	g_last_run_ms = now_ms;
 
-	// Step1: 获取传感器数据
+	// Step1: 获取传感器数据 + 温度闭环
 	Vector3f gyro = {};
 	Vector3f accel = {};
 	if (!DevBmi088::Read(gyro, accel)) {
@@ -195,6 +201,10 @@ extern "C" void App_Flight_Task(void)
 		DevServo::SetFinAngles(safe_delta);
 		return;
 	}
+
+	float temp_c = 0.0f;
+	g_bmi088.ReadTemperature(&temp_c);
+	g_temp_ctrl.Update(temp_c);
 
 	// Step2: 获取制导指令（包含超时保护）
 	float ny_cmd = 0.0f;
@@ -218,25 +228,19 @@ extern "C" void App_Flight_Task(void)
 	DevServo::SetFinAngles(delta);
 
 	// Vofa+ 输出调试数据（10Hz）
-	// 通道 0-2: raw accel int16 (X/Y/Z)
-	// 通道 3-5: raw gyro int16 (X/Y/Z)
-	// 通道 6-8: converted accel m/s² (X/Y/Z)
-	// 通道 9-11: converted gyro rad/s (X/Y/Z)
+	// ch 0-2: filtered accel    ch 3-5: filtered gyro
+	// ch 6: temperature (℃)    ch 7: heater PWM duty
 	static uint8_t vofa_div = 0U;
 	if (++vofa_div >= 10U) {
 		vofa_div = 0U;
-		const Bmi088::Data& d = g_bmi088.last_data_;
-		float dbg[12] = {
-			static_cast<float>(d.raw.accel_x),
-			static_cast<float>(d.raw.accel_y),
-			static_cast<float>(d.raw.accel_z),
-			static_cast<float>(d.raw.gyro_x),
-			static_cast<float>(d.raw.gyro_y),
-			static_cast<float>(d.raw.gyro_z),
-			d.accel_mps2[0], d.accel_mps2[1], d.accel_mps2[2],
-			d.gyro_rads[0],  d.gyro_rads[1],  d.gyro_rads[2]
+		const Bmi088::Data& flt = g_bmi088.filtered_data_;
+		float dbg[8] = {
+			flt.accel_mps2[0], flt.accel_mps2[1], flt.accel_mps2[2],
+			flt.gyro_rads[0],  flt.gyro_rads[1],  flt.gyro_rads[2],
+			g_temp_ctrl.current_temp_,
+			static_cast<float>(g_temp_ctrl.pwm_duty_)
 		};
-		Vofa::JustFloat(dbg, 12);
+		Vofa::JustFloat(dbg, 8);
 	}
 }
 
