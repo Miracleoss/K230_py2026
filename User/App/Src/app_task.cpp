@@ -39,7 +39,7 @@ void Update()
 
 } // namespace
 
-extern "C" void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
 	if ((htim == nullptr) || (htim->Instance != TIM2)) {
 		return;
@@ -66,14 +66,13 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 
 extern "C" bool App_Task_Init(void)
 {
-	if (!App_Flight_Init()) {
-		return false;
-	}
-
-	// 启动 TIM2 基础定时中断（100Hz），驱动前后台任务标志调度。
+	// 先启动 TIM2 调度定时器（100Hz），保证中断始终运行。
 	if (HAL_TIM_Base_Start_IT(&htim2) != HAL_OK) {
 		return false;
 	}
+
+	// 再初始化飞控设备（失败不影响定时器运行，App_Flight_Task 会自动重试）。
+	App_Flight_Init();
 
 	return true;
 }

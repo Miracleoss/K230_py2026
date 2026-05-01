@@ -138,6 +138,7 @@ targets:
         - RTE/_Guided_Dart
         - ../User/App/Inc
         - ../User/Algorithm/Inc
+        - ../User/Utils/Inc
       libList: []
     excludeList: []
     toolchain: AC6

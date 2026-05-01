@@ -78,6 +78,9 @@ public:
 	 */
 	bool ReadSensor(Data* outData);
 
+	/** 最近一次有效读取的传感器数据（供调试 Watch 窗口查看）。 */
+	Data last_data_;
+
 private:
 	/** 写加速度计寄存器。 */
 	bool WriteAccelReg(uint8_t regAddr, uint8_t data);

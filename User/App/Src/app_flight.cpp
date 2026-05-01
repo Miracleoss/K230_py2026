@@ -7,9 +7,16 @@
 #include "dev_k230.h"
 #include "dev_servo.h"
 #include "drv_uart.h"
+#include "vofa.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
+
+// 设备实例化（置于匿名 namespace 外部，便于 Watch 窗口查看）
+Bmi088 g_bmi088(&hspi1);
+K230 g_k230;
+Control g_control;
+Servo g_servo(&htim1);
 
 namespace {
 
@@ -23,12 +30,6 @@ uint32_t g_last_run_ms = 0U;
 uint32_t g_last_k230_rx_ms = 0U;
 
 uint8_t g_k230_rx_buffer[kK230RxBufferSize] = {0U};
-
-// 设备实例化
-Bmi088 g_bmi088(&hspi1);
-K230 g_k230;
-Control g_control;
-Servo g_servo(&htim1);
 
 float Clamp(float value, float min_value, float max_value)
 {
@@ -147,6 +148,8 @@ bool InitK230Rx()
 
 extern "C" bool App_Flight_Init(void)
 {
+	Vofa::Init(&huart1);
+
 	bool ok = true;
 
 	ok = ok && g_bmi088.Init();
@@ -163,8 +166,17 @@ extern "C" bool App_Flight_Init(void)
 
 extern "C" void App_Flight_Task(void)
 {
+	// 初始化未完成时，每隔 1 秒重试一次（避免频繁阻塞）。
 	if (!g_app_inited) {
-		if (!App_Flight_Init()) {
+		static uint32_t g_retry_after_ms = 0U;
+		uint32_t now_ms = HAL_GetTick();
+		if (now_ms < g_retry_after_ms) {
+			return;
+		}
+		if (App_Flight_Init()) {
+			g_retry_after_ms = 0U;
+		} else {
+			g_retry_after_ms = now_ms + 1000U;
 			return;
 		}
 	}
@@ -204,5 +216,27 @@ extern "C" void App_Flight_Task(void)
 
 	// Step5: 硬件执行
 	DevServo::SetFinAngles(delta);
+
+	// Vofa+ 输出调试数据（10Hz）
+	// 通道 0-2: raw accel int16 (X/Y/Z)
+	// 通道 3-5: raw gyro int16 (X/Y/Z)
+	// 通道 6-8: converted accel m/s² (X/Y/Z)
+	// 通道 9-11: converted gyro rad/s (X/Y/Z)
+	static uint8_t vofa_div = 0U;
+	if (++vofa_div >= 10U) {
+		vofa_div = 0U;
+		const Bmi088::Data& d = g_bmi088.last_data_;
+		float dbg[12] = {
+			static_cast<float>(d.raw.accel_x),
+			static_cast<float>(d.raw.accel_y),
+			static_cast<float>(d.raw.accel_z),
+			static_cast<float>(d.raw.gyro_x),
+			static_cast<float>(d.raw.gyro_y),
+			static_cast<float>(d.raw.gyro_z),
+			d.accel_mps2[0], d.accel_mps2[1], d.accel_mps2[2],
+			d.gyro_rads[0],  d.gyro_rads[1],  d.gyro_rads[2]
+		};
+		Vofa::JustFloat(dbg, 12);
+	}
 }
 

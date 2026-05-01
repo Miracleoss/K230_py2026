@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../User;../User/Algorithm;../User/App;../User/Config;../User/Device;../User/Driver;../User/Utils;../User/Driver/Inc;../User/Device/Inc;../User/App/Inc;../User/Algorithm/Inc</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../User;../User/Algorithm;../User/App;../User/Config;../User/Device;../User/Driver;../User/Utils;../User/Driver/Inc;../User/Device/Inc;../User/App/Inc;../User/Algorithm/Inc;../User/Utils/Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -743,6 +743,11 @@
               <FileName>util_math.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\User\Utils\Inc\util_math.h</FilePath>
+            </File>
+            <File>
+              <FileName>vofa.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\User\Utils\Inc\vofa.h</FilePath>
             </File>
           </Files>
         </Group>

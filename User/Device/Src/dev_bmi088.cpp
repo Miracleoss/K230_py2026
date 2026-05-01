@@ -105,55 +105,64 @@ bool Bmi088::Init()
 		return false;
 	}
 
-	// 上电后先将两路 CS 置为非选中状态。
 	DrvGPIO::SetPin(accel_cs_port_, accel_cs_pin_);
 	DrvGPIO::SetPin(gyro_cs_port_, gyro_cs_pin_);
 
-	// 读取并校验加速度计芯片 ID。
+	// 读取并校验芯片 ID，验证 SPI 通信正常（最多重试 3 次）。
+	constexpr uint8_t kMaxRetries = 3U;
 	uint8_t id = 0U;
-	if ((!ReadAccelRegs(kAccelChipIdReg, &id, 1U)) || (id != kAccelChipId)) {
+	bool id_ok = false;
+	for (uint8_t retry = 0; retry < kMaxRetries; ++retry) {
+		bool accel_ok = ReadAccelRegs(kAccelChipIdReg, &id, 1U) && (id == kAccelChipId);
+		bool gyro_ok = ReadGyroRegs(kGyroChipIdReg, &id, 1U) && (id == kGyroChipId);
+		if (accel_ok && gyro_ok) {
+			id_ok = true;
+			break;
+		}
+		Delay_ms(10U);
+	}
+	if (!id_ok) {
 		return false;
 	}
 
-	// 读取并校验陀螺仪芯片 ID。
-	if ((!ReadGyroRegs(kGyroChipIdReg, &id, 1U)) || (id != kGyroChipId)) {
-		return false;
-	}
+	// === 加速度计初始化 ===
+	// 按 BMI088 规格书推荐时序：软复位 → Suspend 态配置 → 退出 Suspend → 使能电源。
 
-	// 加速度初始化：软复位 -> 等待 -> 进入 Active -> 设置量程与带宽。
+	// Step1: 软复位，芯片进入 Suspend 模式。
 	if (!WriteAccelReg(kAccelSoftResetReg, kSoftResetCmd)) {
 		return false;
 	}
-	// 官方建议复位后等待芯片稳定。
 	Delay_ms(50U);
 
-	if (!WriteAccelReg(kAccelPwrConfReg, kAccelPwrConfActive)) {
+	// Step2: 在 Suspend 态下配置寄存器（规格书：配置值在 Suspend→Active 转换时生效）。
+	if (!WriteAccelReg(kAccelConfReg, kAccelBandwidthNormal)) {
 		return false;
 	}
-	Delay_ms(2U);
-
-	if (!WriteAccelReg(kAccelPwrCtrlReg, kAccelPwrCtrlOn)) {
-		return false;
-	}
-	Delay_ms(2U);
-
 	if (!WriteAccelReg(kAccelRangeReg, kAccelRange6G)) {
 		return false;
 	}
 
-	if (!WriteAccelReg(kAccelConfReg, kAccelBandwidthNormal)) {
+	// Step3: 退出 Suspend，进入 Active 模式。
+	if (!WriteAccelReg(kAccelPwrConfReg, kAccelPwrConfActive)) {
 		return false;
 	}
+	Delay_ms(5U);
 
-	// 陀螺仪初始化：正常模式 + 量程 + 采样率。
+	// Step4: 使能加速度计电源。
+	if (!WriteAccelReg(kAccelPwrCtrlReg, kAccelPwrCtrlOn)) {
+		return false;
+	}
+	Delay_ms(5U);
+
+	// === 陀螺仪初始化 ===
+	// 规格书：上电后直接配置，无需特殊时序。
+
 	if (!WriteGyroReg(kGyroLpm1Reg, kGyroNormalMode)) {
 		return false;
 	}
-
 	if (!WriteGyroReg(kGyroRangeReg, kGyroRange2000Dps)) {
 		return false;
 	}
-
 	if (!WriteGyroReg(kGyroBandwidthReg, kGyroBandwidth1000Hz)) {
 		return false;
 	}
@@ -201,6 +210,9 @@ bool Bmi088::ReadSensor(Data* outData)
 	outData->gyro_rads[0] = static_cast<float>(outData->raw.gyro_x) * kGyroScaleRads;
 	outData->gyro_rads[1] = static_cast<float>(outData->raw.gyro_y) * kGyroScaleRads;
 	outData->gyro_rads[2] = static_cast<float>(outData->raw.gyro_z) * kGyroScaleRads;
+
+	// 保存最近一次数据，供调试 Watch 窗口查看。
+	last_data_ = *outData;
 
 	return true;
 }

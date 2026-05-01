@@ -27,5 +27,5 @@ guided_dart/app_flight.o: ..\User\App\Src\app_flight.cpp \
   ..\User\Config\fc_param.h ..\User\Config\hw_config.h \
   ..\User\Algorithm\Inc\alg_control.h ..\User\Device\Inc\dev_bmi088.h \
   ..\User\Device\Inc\dev_k230.h ..\User\Device\Inc\dev_servo.h \
-  ..\User\Driver\Inc\drv_uart.h ..\Core\Inc\spi.h ..\Core\Inc\tim.h \
-  ..\Core\Inc\usart.h
+  ..\User\Driver\Inc\drv_uart.h ..\User\Utils\Inc\vofa.h \
+  ..\Core\Inc\spi.h ..\Core\Inc\tim.h ..\Core\Inc\usart.h
