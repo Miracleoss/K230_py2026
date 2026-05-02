@@ -25,7 +25,7 @@ static constexpr uint32_t kBaudRate = 115200U;
 namespace Bmi088 {
 
 static constexpr uint8_t kAccelBandwidthRegValue = 0xA8U;
-static constexpr uint8_t kGyroBandwidthRegValue = 0x02U;
+static constexpr uint8_t kGyroBandwidthRegValue = 0x82U;
 
 } // namespace Bmi088
 

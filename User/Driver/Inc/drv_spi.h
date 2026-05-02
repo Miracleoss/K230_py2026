@@ -1,7 +1,7 @@
 /**
  * @file drv_spi.h
  * @brief SPI 驱动层接口。
- * @details 提供通用收发和寄存器读写辅助函数，适配 BMI088 等 SPI 外设。
+ * @details 提供通用收发和 BMI088 加速度计/陀螺仪专用寄存器读写函数。
  */
 #pragma once
 
@@ -31,30 +31,42 @@ namespace DrvSPI {
 bool TransmitReceive(SPI_HandleTypeDef* hspi, uint8_t* txData, uint8_t* rxData, uint16_t size, uint32_t timeout = 10U);
 
 /**
- * @brief 读取 SPI 设备连续寄存器（无 dummy 字节）。
- * @details 软件控制片选，读格式为：地址（读位）+ 数据字节。适用于 BMI088 陀螺仪。
- * @param hspi SPI 句柄。
- * @param csPort 片选 GPIO 端口。
- * @param csPin 片选 GPIO 引脚。
- * @param regAddr 起始寄存器地址。
- * @param pData 数据输出缓冲区。
- * @param size 读取字节数。
- * @return true：读取成功；false：读取失败。
+ * @brief 读取加速度计单个寄存器。
+ * @details BMI088 加速度计单寄存器读时序（3 帧）：
+ *          帧1: regAddr|0x80（地址+读位）
+ *          帧2: 0x55（dummy，MISO 无效）
+ *          帧3: 0x55（MISO 携带有效数据）
  */
-bool ReadRegisters(SPI_HandleTypeDef* hspi, GPIO_TypeDef* csPort, uint16_t csPin, uint8_t regAddr, uint8_t* pData, uint16_t size);
+bool AccelReadSingle(SPI_HandleTypeDef* hspi, GPIO_TypeDef* csPort, uint16_t csPin,
+                     uint8_t regAddr, uint8_t* pData);
 
 /**
- * @brief 读取 SPI 设备连续寄存器（带 dummy 字节）。
- * @details 软件控制片选，读格式为：地址（读位）+ dummy 字节 + 数据字节。适用于 BMI088 加速度计。
- * @param hspi SPI 句柄。
- * @param csPort 片选 GPIO 端口。
- * @param csPin 片选 GPIO 引脚。
- * @param regAddr 起始寄存器地址。
- * @param pData 数据输出缓冲区。
- * @param size 读取字节数。
- * @return true：读取成功；false：读取失败。
+ * @brief 读取加速度计连续寄存器。
+ * @details BMI088 加速度计多字节读时序（N+2 帧）：
+ *          帧1: regAddr|0x80（地址+读位）
+ *          帧2: regAddr|0x80（第二地址字节，MISO 无效）
+ *          帧3..N+2: 0x55（MISO 携带有效数据）
  */
-bool ReadRegistersWithDummy(SPI_HandleTypeDef* hspi, GPIO_TypeDef* csPort, uint16_t csPin, uint8_t regAddr, uint8_t* pData, uint16_t size);
+bool AccelReadMulti(SPI_HandleTypeDef* hspi, GPIO_TypeDef* csPort, uint16_t csPin,
+                    uint8_t regAddr, uint8_t* pData, uint16_t size);
+
+/**
+ * @brief 读取陀螺仪单个寄存器。
+ * @details BMI088 陀螺仪单寄存器读时序（2 帧）：
+ *          帧1: regAddr|0x80（地址+读位）
+ *          帧2: 0x55（MISO 携带有效数据）
+ */
+bool GyroReadSingle(SPI_HandleTypeDef* hspi, GPIO_TypeDef* csPort, uint16_t csPin,
+                    uint8_t regAddr, uint8_t* pData);
+
+/**
+ * @brief 读取陀螺仪连续寄存器。
+ * @details BMI088 陀螺仪多字节读时序（N+1 帧）：
+ *          帧1: regAddr|0x80（地址+读位）
+ *          帧2..N+1: 0x55（MISO 携带有效数据）
+ */
+bool GyroReadMulti(SPI_HandleTypeDef* hspi, GPIO_TypeDef* csPort, uint16_t csPin,
+                   uint8_t regAddr, uint8_t* pData, uint16_t size);
 
 /**
  * @brief 写 SPI 设备单个寄存器。

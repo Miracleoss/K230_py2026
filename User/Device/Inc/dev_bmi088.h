@@ -98,12 +98,16 @@ public:
 private:
 	/** 写加速度计寄存器。 */
 	bool WriteAccelReg(uint8_t regAddr, uint8_t data);
-	/** 读加速度计连续寄存器。 */
-	bool ReadAccelRegs(uint8_t regAddr, uint8_t* pData, uint16_t size);
+	/** 读加速度计单个寄存器（3帧: addr|0x80, dummy, data）。 */
+	bool ReadAccelSingleReg(uint8_t regAddr, uint8_t* pData);
+	/** 读加速度计连续寄存器（N+2帧: addr|0x80, addr|0x80, data...）。 */
+	bool ReadAccelMultiRegs(uint8_t regAddr, uint8_t* pData, uint16_t size);
 	/** 写陀螺仪寄存器。 */
 	bool WriteGyroReg(uint8_t regAddr, uint8_t data);
-	/** 读陀螺仪连续寄存器。 */
-	bool ReadGyroRegs(uint8_t regAddr, uint8_t* pData, uint16_t size);
+	/** 读陀螺仪单个寄存器（2帧: addr|0x80, data）。 */
+	bool ReadGyroSingleReg(uint8_t regAddr, uint8_t* pData);
+	/** 读陀螺仪连续寄存器（N+1帧: addr|0x80, data...）。 */
+	bool ReadGyroMultiRegs(uint8_t regAddr, uint8_t* pData, uint16_t size);
 
 	/** 将 2 个字节拼接为 int16_t。 */
 	static int16_t ToInt16(uint8_t lsb, uint8_t msb);

@@ -3,11 +3,11 @@
 <title>Static Call Graph - [Guided_Dart\Guided_Dart.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Guided_Dart\Guided_Dart.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Fri May  1 21:59:51 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Sat May  2 12:49:14 2026
 <BR><P>
 <H3>Maximum Stack Usage =        648 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-__rt_entry_main &rArr; main &rArr; Task_Loop &rArr; (anonymous namespace)::AppFlight::ControlLoop() &rArr; App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+__rt_entry_main &rArr; main &rArr; Task_Loop &rArr; (anonymous namespace)::AppFlight::ControlLoop() &rArr; App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 <P>
 <H3>
 Functions with no stack information
@@ -107,9 +107,9 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
-<P><STRONG><a name="[11b]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[121]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[11c]"></a>__scatterload_loop</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[122]"></a>__scatterload_loop</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
 <P><STRONG><a name="[43]"></a>__scatterload_copy</STRONG> (Thumb, 26 bytes, Stack size unknown bytes, __scatter_copy.o(!!handler_copy), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
@@ -117,21 +117,21 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
 </UL>
 
-<P><STRONG><a name="[11d]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, __scatter.o(!!handler_null), UNUSED)
+<P><STRONG><a name="[123]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, __scatter.o(!!handler_null), UNUSED)
 
-<P><STRONG><a name="[11e]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
+<P><STRONG><a name="[124]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
 
 <P><STRONG><a name="[48]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
 </UL>
 
-<P><STRONG><a name="[11f]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
+<P><STRONG><a name="[125]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
 
-<P><STRONG><a name="[120]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
+<P><STRONG><a name="[126]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
 
-<P><STRONG><a name="[121]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
+<P><STRONG><a name="[127]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
 
-<P><STRONG><a name="[122]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
+<P><STRONG><a name="[128]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
 
 <P><STRONG><a name="[44]"></a>__rt_lib_init_cpp_2</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000033))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
@@ -140,66 +140,66 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cpp_initialize__aeabi_
 </UL>
 
-<P><STRONG><a name="[123]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
+<P><STRONG><a name="[129]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
 
-<P><STRONG><a name="[124]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000002))
+<P><STRONG><a name="[12a]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000002))
 
-<P><STRONG><a name="[125]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
+<P><STRONG><a name="[12b]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
 
-<P><STRONG><a name="[126]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
+<P><STRONG><a name="[12c]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
 
-<P><STRONG><a name="[127]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
+<P><STRONG><a name="[12d]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
 
-<P><STRONG><a name="[128]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
+<P><STRONG><a name="[12e]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
 
-<P><STRONG><a name="[129]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
+<P><STRONG><a name="[12f]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
 
-<P><STRONG><a name="[12a]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
+<P><STRONG><a name="[130]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
 
-<P><STRONG><a name="[12b]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
+<P><STRONG><a name="[131]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
 
-<P><STRONG><a name="[12c]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
+<P><STRONG><a name="[132]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
 
-<P><STRONG><a name="[12d]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000006))
+<P><STRONG><a name="[133]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000006))
 
-<P><STRONG><a name="[12e]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000010))
+<P><STRONG><a name="[134]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000010))
 
-<P><STRONG><a name="[12f]"></a>__rt_lib_init_relocate_pie_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
+<P><STRONG><a name="[135]"></a>__rt_lib_init_relocate_pie_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
 
-<P><STRONG><a name="[130]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
+<P><STRONG><a name="[136]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
 
-<P><STRONG><a name="[131]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000027))
+<P><STRONG><a name="[137]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000027))
 
-<P><STRONG><a name="[132]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
+<P><STRONG><a name="[138]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
 
-<P><STRONG><a name="[133]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000034))
+<P><STRONG><a name="[139]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000034))
 
-<P><STRONG><a name="[134]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000035))
+<P><STRONG><a name="[13a]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000035))
 
 <P><STRONG><a name="[4d]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
 </UL>
 
-<P><STRONG><a name="[135]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
+<P><STRONG><a name="[13b]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
 
-<P><STRONG><a name="[136]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
+<P><STRONG><a name="[13c]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
 
-<P><STRONG><a name="[137]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
+<P><STRONG><a name="[13d]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
 
-<P><STRONG><a name="[138]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
+<P><STRONG><a name="[13e]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
 
-<P><STRONG><a name="[139]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
+<P><STRONG><a name="[13f]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
 
-<P><STRONG><a name="[13a]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
+<P><STRONG><a name="[140]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
 
-<P><STRONG><a name="[13b]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
+<P><STRONG><a name="[141]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
 <P><STRONG><a name="[41]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[36]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
 </UL>
 
-<P><STRONG><a name="[13c]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
+<P><STRONG><a name="[142]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
 
 <P><STRONG><a name="[45]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -212,17 +212,17 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
 </UL>
 
-<P><STRONG><a name="[13d]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
+<P><STRONG><a name="[143]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[49]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
 <BR><BR>[Stack]<UL><LI>Max Depth = 648 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; Task_Loop &rArr; (anonymous namespace)::AppFlight::ControlLoop() &rArr; App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; Task_Loop &rArr; (anonymous namespace)::AppFlight::ControlLoop() &rArr; App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
-<P><STRONG><a name="[13e]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
+<P><STRONG><a name="[144]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
 
 <P><STRONG><a name="[54]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -232,7 +232,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 
-<P><STRONG><a name="[13f]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
+<P><STRONG><a name="[145]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
 
 <P><STRONG><a name="[4e]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
@@ -357,7 +357,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[e4]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
+<P><STRONG><a name="[e6]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Vofa::JustFloat(float const*, unsigned char)
 </UL>
 
@@ -365,24 +365,24 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
 
-<P><STRONG><a name="[140]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
+<P><STRONG><a name="[146]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
 
 <P><STRONG><a name="[c6]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&)
 </UL>
 
-<P><STRONG><a name="[141]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[147]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[142]"></a>__rt_memclr_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[148]"></a>__rt_memclr_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[143]"></a>_memset_w</STRONG> (Thumb, 74 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[149]"></a>_memset_w</STRONG> (Thumb, 74 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[144]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[14a]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[145]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[14b]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[146]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[14c]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
 <P><STRONG><a name="[3f]"></a>__cpp_initialize__aeabi_</STRONG> (Thumb, 36 bytes, Stack size 24 bytes, init_aeabi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __cpp_initialize__aeabi_
@@ -394,11 +394,11 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
 </UL>
 
-<P><STRONG><a name="[147]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[14d]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[148]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[14e]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[149]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[14f]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
 
 <P><STRONG><a name="[46]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -419,26 +419,26 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[14a]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[150]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[52]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[14b]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[151]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[14c]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[152]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[14d]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[153]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[14e]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
+<P><STRONG><a name="[154]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
 <P><STRONG><a name="[4f]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 
 <P><STRONG><a name="[55]"></a>App_Flight_Init</STRONG> (Thumb, 254 bytes, Stack size 32 bytes, app_flight.o(.text.App_Flight_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 328<LI>Call Chain = App_Flight_Init &rArr; Bmi088::Init() &rArr; Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<BR><BR>[Stack]<UL><LI>Max Depth = 384<LI>Call Chain = App_Flight_Init &rArr; Bmi088::Init() &rArr; Bmi088::WriteGyroReg(unsigned char, unsigned char) &rArr; DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::SetTarget(float)
@@ -455,7 +455,7 @@ Global Symbols
 
 <P><STRONG><a name="[5e]"></a>App_Flight_Task</STRONG> (Thumb, 438 bytes, Stack size 160 bytes, app_flight.o(.text.App_Flight_Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 608 + Unknown Stack Size
-<LI>Call Chain = App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<LI>Call Chain = App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
@@ -476,7 +476,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[6b]"></a>App_Task_Init</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, app_task.o(.text.App_Task_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 344<LI>Call Chain = App_Task_Init &rArr; App_Flight_Init &rArr; Bmi088::Init() &rArr; Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<BR><BR>[Stack]<UL><LI>Max Depth = 400<LI>Call Chain = App_Task_Init &rArr; App_Flight_Init &rArr; Bmi088::Init() &rArr; Bmi088::WriteGyroReg(unsigned char, unsigned char) &rArr; DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Init
@@ -582,6 +582,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_ms(unsigned int)
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_us(unsigned int)
 </UL>
 
 <P><STRONG><a name="[88]"></a>HAL_GPIO_Init</STRONG> (Thumb, 798 bytes, Stack size 64 bytes, stm32f1xx_hal_gpio.o(.text.HAL_GPIO_Init))
@@ -597,8 +598,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
 </UL>
 
 <P><STRONG><a name="[5d]"></a>HAL_GetTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f1xx_hal.o(.text.HAL_GetTick))
@@ -686,6 +687,7 @@ Global Symbols
 <P><STRONG><a name="[82]"></a>HAL_RCC_GetHCLKFreq</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f1xx_hal_rcc.o(.text.HAL_RCC_GetHCLKFreq))
 <BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::GetSysTickClockHz()
 </UL>
 
 <P><STRONG><a name="[81]"></a>HAL_RCC_GetPCLK1Freq</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, stm32f1xx_hal_rcc.o(.text.HAL_RCC_GetPCLK1Freq))
@@ -693,7 +695,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::GetTimerClockHz(TIM_TypeDef*)
+<BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::GetTimerClockHz(TIM_TypeDef*)
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 </UL>
 
@@ -702,7 +704,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::GetTimerClockHz(TIM_TypeDef*)
+<BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::GetTimerClockHz(TIM_TypeDef*)
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetConfig
 </UL>
 
@@ -743,7 +745,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_EndRxTxTransaction
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)
+<BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)
 </UL>
 
 <P><STRONG><a name="[77]"></a>HAL_SYSTICK_Config</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, stm32f1xx_hal_cortex.o(.text.HAL_SYSTICK_Config))
@@ -896,7 +898,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::StartPWM(TIM_HandleTypeDef*, unsigned int)
+<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::StartPWM(TIM_HandleTypeDef*, unsigned int)
 </UL>
 
 <P><STRONG><a name="[98]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 102 bytes, Stack size 4 bytes, app_task.o(.text.HAL_TIM_PeriodElapsedCallback))
@@ -916,7 +918,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Start_Receive_DMA
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)
+<BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)
 </UL>
 
 <P><STRONG><a name="[a8]"></a>HAL_UARTEx_RxEventCallback</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, app_task.o(.text.HAL_UARTEx_RxEventCallback))
@@ -1031,7 +1033,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[ba]"></a>MX_SPI1_Init</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, spi.o(.text.MX_SPI1_Init))
+<P><STRONG><a name="[ba]"></a>MX_SPI1_Init</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, spi.o(.text.MX_SPI1_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = MX_SPI1_Init &rArr; HAL_SPI_Init &rArr; HAL_SPI_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
@@ -1177,7 +1179,7 @@ Global Symbols
 
 <P><STRONG><a name="[c7]"></a>Task_Loop</STRONG> (Thumb, 180 bytes, Stack size 16 bytes, app_task.o(.text.Task_Loop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 632 + Unknown Stack Size
-<LI>Call Chain = Task_Loop &rArr; (anonymous namespace)::AppFlight::ControlLoop() &rArr; App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<LI>Call Chain = Task_Loop &rArr; (anonymous namespace)::AppFlight::ControlLoop() &rArr; App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::DevK230::Update()
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::AppFlight::ControlLoop()
@@ -1218,36 +1220,45 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::Init()
 </UL>
 
-<P><STRONG><a name="[e1]"></a>K230::DecodeFrame(unsigned char const*)</STRONG> (Thumb, 166 bytes, Stack size 40 bytes, dev_k230.o(.text._ZN4K23011DecodeFrameEPKh))
+<P><STRONG><a name="[d5]"></a>Delay_us(unsigned int)</STRONG> (Thumb, 266 bytes, Stack size 56 bytes, drv_delay.o(.text._Z8Delay_usj))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Delay_us(unsigned int) &rArr; HAL_Delay
+</UL>
+<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::GetSysTickClockHz()
+</UL>
+<BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::Init()
+</UL>
+
+<P><STRONG><a name="[e3]"></a>K230::DecodeFrame(unsigned char const*)</STRONG> (Thumb, 166 bytes, Stack size 40 bytes, dev_k230.o(.text._ZN4K23011DecodeFrameEPKh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = K230::DecodeFrame(unsigned char const*) &rArr; K230::CalcChecksum(unsigned char const*, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bool std::__2::__math::isfinite[abi:nn190000]&lang;float, 0&rang;(float)
-<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::CalcChecksum(unsigned char const*, unsigned short)
+<BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bool std::__2::__math::isfinite[abi:nn190000]&lang;float, 0&rang;(float)
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::CalcChecksum(unsigned char const*, unsigned short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::ParseProtocol(unsigned char*, unsigned short)
+<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::ParseProtocol(unsigned char*, unsigned short)
 </UL>
 
-<P><STRONG><a name="[e2]"></a>K230::CalcChecksum(unsigned char const*, unsigned short)</STRONG> (Thumb, 74 bytes, Stack size 12 bytes, dev_k230.o(.text._ZN4K23012CalcChecksumEPKht))
+<P><STRONG><a name="[e4]"></a>K230::CalcChecksum(unsigned char const*, unsigned short)</STRONG> (Thumb, 74 bytes, Stack size 12 bytes, dev_k230.o(.text._ZN4K23012CalcChecksumEPKht))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = K230::CalcChecksum(unsigned char const*, unsigned short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::DecodeFrame(unsigned char const*)
+<BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::DecodeFrame(unsigned char const*)
 </UL>
 
-<P><STRONG><a name="[db]"></a>K230::ParseProtocol(unsigned char*, unsigned short)</STRONG> (Thumb, 238 bytes, Stack size 32 bytes, dev_k230.o(.text._ZN4K23013ParseProtocolEPht))
+<P><STRONG><a name="[dd]"></a>K230::ParseProtocol(unsigned char*, unsigned short)</STRONG> (Thumb, 238 bytes, Stack size 32 bytes, dev_k230.o(.text._ZN4K23013ParseProtocolEPht))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = K230::ParseProtocol(unsigned char*, unsigned short) &rArr; K230::DecodeFrame(unsigned char const*) &rArr; K230::CalcChecksum(unsigned char const*, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::DecodeFrame(unsigned char const*)
+<BR>[Calls]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::DecodeFrame(unsigned char const*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::K230RxCallback(__UART_HandleTypeDef*, unsigned char*, unsigned short, void*)
 </UL>
 
-<P><STRONG><a name="[104]"></a>K230::K230()</STRONG> (Thumb, 66 bytes, Stack size 20 bytes, dev_k230.o(.text._ZN4K230C2Ev))
+<P><STRONG><a name="[10a]"></a>K230::K230()</STRONG> (Thumb, 66 bytes, Stack size 20 bytes, dev_k230.o(.text._ZN4K230C2Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = K230::K230()
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxx_global_var_init.1
 </UL>
 
-<P><STRONG><a name="[14f]"></a>K230::K230__sub_object()</STRONG> (Thumb, 66 bytes, Stack size 20 bytes, dev_k230.o(.text._ZN4K230C2Ev), UNUSED)
+<P><STRONG><a name="[155]"></a>K230::K230__sub_object()</STRONG> (Thumb, 66 bytes, Stack size 20 bytes, dev_k230.o(.text._ZN4K230C2Ev), UNUSED)
 
 <P><STRONG><a name="[56]"></a>Vofa::Init(__UART_HandleTypeDef*)</STRONG> (Thumb, 20 bytes, Stack size 4 bytes, app_flight.o(.text._ZN4Vofa4InitEP20__UART_HandleTypeDef))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Vofa::Init(__UART_HandleTypeDef*)
@@ -1258,219 +1269,256 @@ Global Symbols
 <P><STRONG><a name="[6a]"></a>Vofa::JustFloat(float const*, unsigned char)</STRONG> (Thumb, 92 bytes, Stack size 128 bytes, app_flight.o(.text._ZN4Vofa9JustFloatEPKfh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = Vofa::JustFloat(float const*, unsigned char) &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit_DMA
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
 
-<P><STRONG><a name="[df]"></a>Servo::SetFinAngles(float*)</STRONG> (Thumb, 128 bytes, Stack size 40 bytes, dev_servo.o(.text._ZN5Servo12SetFinAnglesEPf))
+<P><STRONG><a name="[e1]"></a>Servo::SetFinAngles(float*)</STRONG> (Thumb, 128 bytes, Stack size 40 bytes, dev_servo.o(.text._ZN5Servo12SetFinAnglesEPf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = Servo::SetFinAngles(float*) &rArr; Servo::PulseUsToCompare(TIM_HandleTypeDef*, float) &rArr; Servo::GetTimerClockHz(TIM_TypeDef*) &rArr; HAL_RCC_GetPCLK2Freq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::SetCompare(TIM_HandleTypeDef*, unsigned int, unsigned int)
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::AngleDegToPulseUs(float)
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::ClampAngleDeg(float)
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::SetCompare(TIM_HandleTypeDef*, unsigned int, unsigned int)
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::AngleDegToPulseUs(float)
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::ClampAngleDeg(float)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::Init()
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::DevServo::SetFinAngles(float*)
 </UL>
 
-<P><STRONG><a name="[e5]"></a>Servo::ClampAngleDeg(float)</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, dev_servo.o(.text._ZN5Servo13ClampAngleDegEf))
+<P><STRONG><a name="[e7]"></a>Servo::ClampAngleDeg(float)</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, dev_servo.o(.text._ZN5Servo13ClampAngleDegEf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Servo::ClampAngleDeg(float) &rArr; __aeabi_fcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
 </UL>
-<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
+<BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
 </UL>
 
-<P><STRONG><a name="[e9]"></a>Servo::GetTimerClockHz(TIM_TypeDef*)</STRONG> (Thumb, 136 bytes, Stack size 40 bytes, dev_servo.o(.text._ZN5Servo15GetTimerClockHzEP11TIM_TypeDef))
+<P><STRONG><a name="[eb]"></a>Servo::GetTimerClockHz(TIM_TypeDef*)</STRONG> (Thumb, 136 bytes, Stack size 40 bytes, dev_servo.o(.text._ZN5Servo15GetTimerClockHzEP11TIM_TypeDef))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Servo::GetTimerClockHz(TIM_TypeDef*) &rArr; HAL_RCC_GetPCLK2Freq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
 </UL>
 
-<P><STRONG><a name="[e7]"></a>Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)</STRONG> (Thumb, 156 bytes, Stack size 48 bytes, dev_servo.o(.text._ZN5Servo16PulseUsToCompareEP17TIM_HandleTypeDeff))
+<P><STRONG><a name="[e9]"></a>Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)</STRONG> (Thumb, 156 bytes, Stack size 48 bytes, dev_servo.o(.text._ZN5Servo16PulseUsToCompareEP17TIM_HandleTypeDeff))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = Servo::PulseUsToCompare(TIM_HandleTypeDef*, float) &rArr; Servo::GetTimerClockHz(TIM_TypeDef*) &rArr; HAL_RCC_GetPCLK2Freq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::GetTimerClockHz(TIM_TypeDef*)
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::GetTimerClockHz(TIM_TypeDef*)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
+<BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
 </UL>
 
-<P><STRONG><a name="[e6]"></a>Servo::AngleDegToPulseUs(float)</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, dev_servo.o(.text._ZN5Servo17AngleDegToPulseUsEf))
+<P><STRONG><a name="[e8]"></a>Servo::AngleDegToPulseUs(float)</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, dev_servo.o(.text._ZN5Servo17AngleDegToPulseUsEf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Servo::AngleDegToPulseUs(float) &rArr; __aeabi_fmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
+<BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
 </UL>
 
 <P><STRONG><a name="[58]"></a>Servo::Init()</STRONG> (Thumb, 114 bytes, Stack size 40 bytes, dev_servo.o(.text._ZN5Servo4InitEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = Servo::Init() &rArr; Servo::SetFinAngles(float*) &rArr; Servo::PulseUsToCompare(TIM_HandleTypeDef*, float) &rArr; Servo::GetTimerClockHz(TIM_TypeDef*) &rArr; HAL_RCC_GetPCLK2Freq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::StartPWM(TIM_HandleTypeDef*, unsigned int)
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
+<BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::StartPWM(TIM_HandleTypeDef*, unsigned int)
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Init
 </UL>
 
-<P><STRONG><a name="[106]"></a>Servo::Servo(TIM_HandleTypeDef*)</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, dev_servo.o(.text._ZN5ServoC2EP17TIM_HandleTypeDef))
+<P><STRONG><a name="[10c]"></a>Servo::Servo(TIM_HandleTypeDef*)</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, dev_servo.o(.text._ZN5ServoC2EP17TIM_HandleTypeDef))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Servo::Servo(TIM_HandleTypeDef*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxx_global_var_init.3
 </UL>
 
-<P><STRONG><a name="[150]"></a>Servo::Servo__sub_object(TIM_HandleTypeDef*)</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, dev_servo.o(.text._ZN5ServoC2EP17TIM_HandleTypeDef), UNUSED)
+<P><STRONG><a name="[156]"></a>Servo::Servo__sub_object(TIM_HandleTypeDef*)</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, dev_servo.o(.text._ZN5ServoC2EP17TIM_HandleTypeDef), UNUSED)
 
-<P><STRONG><a name="[e0]"></a>Bmi088::ReadSensor(Bmi088::Data*)</STRONG> (Thumb, 624 bytes, Stack size 136 bytes, dev_bmi088.o(.text._ZN6Bmi08810ReadSensorEPNS_4DataE))
-<BR><BR>[Stack]<UL><LI>Max Depth = 384<LI>Call Chain = Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<P><STRONG><a name="[e2]"></a>Bmi088::ReadSensor(Bmi088::Data*)</STRONG> (Thumb, 634 bytes, Stack size 136 bytes, dev_bmi088.o(.text._ZN6Bmi08810ReadSensorEPNS_4DataE))
+<BR><BR>[Stack]<UL><LI>Max Depth = 384<LI>Call Chain = Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ToInt16(unsigned char, unsigned char)
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short)
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadAccelRegs(unsigned char, unsigned char*, unsigned short)
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ToInt16(unsigned char, unsigned char)
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short)
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadAccelMultiRegs(unsigned char, unsigned char*, unsigned short)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&)
 </UL>
 
-<P><STRONG><a name="[f0]"></a>Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short)</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, dev_bmi088.o(.text._ZN6Bmi08812ReadGyroRegsEhPht))
-<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
-</UL>
-<BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
-</UL>
-<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::Init()
-</UL>
-
-<P><STRONG><a name="[f5]"></a>Bmi088::WriteGyroReg(unsigned char, unsigned char)</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, dev_bmi088.o(.text._ZN6Bmi08812WriteGyroRegEhh))
+<P><STRONG><a name="[f6]"></a>Bmi088::WriteGyroReg(unsigned char, unsigned char)</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, dev_bmi088.o(.text._ZN6Bmi08812WriteGyroRegEhh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = Bmi088::WriteGyroReg(unsigned char, unsigned char) &rArr; DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)
+<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::Init()
-</UL>
-
-<P><STRONG><a name="[ef]"></a>Bmi088::ReadAccelRegs(unsigned char, unsigned char*, unsigned short)</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, dev_bmi088.o(.text._ZN6Bmi08813ReadAccelRegsEhPht))
-<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = Bmi088::ReadAccelRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegistersWithDummy(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
-</UL>
-<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::ReadRegistersWithDummy(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
-</UL>
-<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadTemperature(float*)
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::Init()
 </UL>
 
 <P><STRONG><a name="[f8]"></a>Bmi088::WriteAccelReg(unsigned char, unsigned char)</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, dev_bmi088.o(.text._ZN6Bmi08813WriteAccelRegEhh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = Bmi088::WriteAccelReg(unsigned char, unsigned char) &rArr; DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)
+<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::Init()
 </UL>
 
-<P><STRONG><a name="[61]"></a>Bmi088::ReadTemperature(float*)</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, dev_bmi088.o(.text._ZN6Bmi08815ReadTemperatureEPf))
-<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = Bmi088::ReadTemperature(float*) &rArr; Bmi088::ReadAccelRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegistersWithDummy(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<P><STRONG><a name="[61]"></a>Bmi088::ReadTemperature(float*)</STRONG> (Thumb, 148 bytes, Stack size 32 bytes, dev_bmi088.o(.text._ZN6Bmi08815ReadTemperatureEPf))
+<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = Bmi088::ReadTemperature(float*) &rArr; Bmi088::ReadAccelMultiRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::AccelReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadAccelRegs(unsigned char, unsigned char*, unsigned short)
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadAccelMultiRegs(unsigned char, unsigned char*, unsigned short)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
 
-<P><STRONG><a name="[57]"></a>Bmi088::Init()</STRONG> (Thumb, 490 bytes, Stack size 48 bytes, dev_bmi088.o(.text._ZN6Bmi0884InitEv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = Bmi088::Init() &rArr; Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<P><STRONG><a name="[f2]"></a>Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short)</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, dev_bmi088.o(.text._ZN6Bmi08817ReadGyroMultiRegsEhPht))
+<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::WriteGyroReg(unsigned char, unsigned char)
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::WriteAccelReg(unsigned char, unsigned char)
+<BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
+</UL>
+
+<P><STRONG><a name="[fa]"></a>Bmi088::ReadGyroSingleReg(unsigned char, unsigned char*)</STRONG> (Thumb, 44 bytes, Stack size 24 bytes, dev_bmi088.o(.text._ZN6Bmi08817ReadGyroSingleRegEhPh))
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = Bmi088::ReadGyroSingleReg(unsigned char, unsigned char*) &rArr; DrvSPI::GyroReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::GyroReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::Init()
+</UL>
+
+<P><STRONG><a name="[f1]"></a>Bmi088::ReadAccelMultiRegs(unsigned char, unsigned char*, unsigned short)</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, dev_bmi088.o(.text._ZN6Bmi08818ReadAccelMultiRegsEhPht))
+<BR><BR>[Stack]<UL><LI>Max Depth = 248<LI>Call Chain = Bmi088::ReadAccelMultiRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::AccelReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::AccelReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadTemperature(float*)
+</UL>
+
+<P><STRONG><a name="[fd]"></a>Bmi088::ReadAccelSingleReg(unsigned char, unsigned char*)</STRONG> (Thumb, 44 bytes, Stack size 24 bytes, dev_bmi088.o(.text._ZN6Bmi08818ReadAccelSingleRegEhPh))
+<BR><BR>[Stack]<UL><LI>Max Depth = 232<LI>Call Chain = Bmi088::ReadAccelSingleReg(unsigned char, unsigned char*) &rArr; DrvSPI::AccelReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::AccelReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::Init()
+</UL>
+
+<P><STRONG><a name="[57]"></a>Bmi088::Init()</STRONG> (Thumb, 572 bytes, Stack size 120 bytes, dev_bmi088.o(.text._ZN6Bmi0884InitEv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 352<LI>Call Chain = Bmi088::Init() &rArr; Bmi088::WriteGyroReg(unsigned char, unsigned char) &rArr; DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::WriteGyroReg(unsigned char, unsigned char)
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadGyroSingleReg(unsigned char, unsigned char*)
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_ms(unsigned int)
-<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short)
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadAccelRegs(unsigned char, unsigned char*, unsigned short)
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::WriteAccelReg(unsigned char, unsigned char)
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_us(unsigned int)
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadAccelSingleReg(unsigned char, unsigned char*)
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Init
 </UL>
 
-<P><STRONG><a name="[f1]"></a>Bmi088::ToInt16(unsigned char, unsigned char)</STRONG> (Thumb, 28 bytes, Stack size 4 bytes, dev_bmi088.o(.text._ZN6Bmi0887ToInt16Ehh))
+<P><STRONG><a name="[f3]"></a>Bmi088::ToInt16(unsigned char, unsigned char)</STRONG> (Thumb, 28 bytes, Stack size 4 bytes, dev_bmi088.o(.text._ZN6Bmi0887ToInt16Ehh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Bmi088::ToInt16(unsigned char, unsigned char)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
 </UL>
 
-<P><STRONG><a name="[103]"></a>Bmi088::Bmi088(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, GPIO_TypeDef*, unsigned short)</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, dev_bmi088.o(.text._ZN6Bmi088C2EP19__SPI_HandleTypeDefP12GPIO_TypeDeftS3_t))
+<P><STRONG><a name="[109]"></a>Bmi088::Bmi088(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, GPIO_TypeDef*, unsigned short)</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, dev_bmi088.o(.text._ZN6Bmi088C2EP19__SPI_HandleTypeDefP12GPIO_TypeDeftS3_t))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Bmi088::Bmi088(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, GPIO_TypeDef*, unsigned short)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxx_global_var_init
 </UL>
 
-<P><STRONG><a name="[151]"></a>Bmi088::Bmi088__sub_object(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, GPIO_TypeDef*, unsigned short)</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, dev_bmi088.o(.text._ZN6Bmi088C2EP19__SPI_HandleTypeDefP12GPIO_TypeDeftS3_t), UNUSED)
+<P><STRONG><a name="[157]"></a>Bmi088::Bmi088__sub_object(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, GPIO_TypeDef*, unsigned short)</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, dev_bmi088.o(.text._ZN6Bmi088C2EP19__SPI_HandleTypeDefP12GPIO_TypeDeftS3_t), UNUSED)
 
-<P><STRONG><a name="[f4]"></a>DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)</STRONG> (Thumb, 266 bytes, Stack size 48 bytes, drv_spi.o(.text._ZN6DrvSPI13ReadRegistersEP19__SPI_HandleTypeDefP12GPIO_TypeDefthPht))
-<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<P><STRONG><a name="[f9]"></a>DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)</STRONG> (Thumb, 266 bytes, Stack size 48 bytes, drv_spi.o(.text._ZN6DrvSPI13GyroReadMultiEP19__SPI_HandleTypeDefP12GPIO_TypeDefthPht))
+<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
+<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short)
+<BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short)
 </UL>
 
-<P><STRONG><a name="[f6]"></a>DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)</STRONG> (Thumb, 138 bytes, Stack size 40 bytes, drv_spi.o(.text._ZN6DrvSPI13WriteRegisterEP19__SPI_HandleTypeDefP12GPIO_TypeDefthh))
+<P><STRONG><a name="[f7]"></a>DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)</STRONG> (Thumb, 138 bytes, Stack size 40 bytes, drv_spi.o(.text._ZN6DrvSPI13WriteRegisterEP19__SPI_HandleTypeDefP12GPIO_TypeDefthh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
+<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::WriteGyroReg(unsigned char, unsigned char)
+<BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::WriteGyroReg(unsigned char, unsigned char)
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::WriteAccelReg(unsigned char, unsigned char)
 </UL>
 
-<P><STRONG><a name="[fb]"></a>DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, drv_spi.o(.text._ZN6DrvSPI15TransmitReceiveEP19__SPI_HandleTypeDefPhS2_tj))
+<P><STRONG><a name="[fc]"></a>DrvSPI::AccelReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)</STRONG> (Thumb, 302 bytes, Stack size 48 bytes, drv_spi.o(.text._ZN6DrvSPI14AccelReadMultiEP19__SPI_HandleTypeDefP12GPIO_TypeDefthPht))
+<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = DrvSPI::AccelReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadAccelMultiRegs(unsigned char, unsigned char*, unsigned short)
+</UL>
+
+<P><STRONG><a name="[fb]"></a>DrvSPI::GyroReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*)</STRONG> (Thumb, 206 bytes, Stack size 40 bytes, drv_spi.o(.text._ZN6DrvSPI14GyroReadSingleEP19__SPI_HandleTypeDefP12GPIO_TypeDefthPh))
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = DrvSPI::GyroReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadGyroSingleReg(unsigned char, unsigned char*)
+</UL>
+
+<P><STRONG><a name="[fe]"></a>DrvSPI::AccelReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*)</STRONG> (Thumb, 244 bytes, Stack size 40 bytes, drv_spi.o(.text._ZN6DrvSPI15AccelReadSingleEP19__SPI_HandleTypeDefP12GPIO_TypeDefthPh))
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = DrvSPI::AccelReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+</UL>
+<BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadAccelSingleReg(unsigned char, unsigned char*)
+</UL>
+
+<P><STRONG><a name="[101]"></a>DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, drv_spi.o(.text._ZN6DrvSPI15TransmitReceiveEP19__SPI_HandleTypeDefPhS2_tj))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::ReadRegistersWithDummy(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
+<BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::AccelReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::GyroReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*)
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::AccelReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*)
 </UL>
 
-<P><STRONG><a name="[f7]"></a>DrvSPI::ReadRegistersWithDummy(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)</STRONG> (Thumb, 270 bytes, Stack size 48 bytes, drv_spi.o(.text._ZN6DrvSPI22ReadRegistersWithDummyEP19__SPI_HandleTypeDefP12GPIO_TypeDefthPht))
-<BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = DrvSPI::ReadRegistersWithDummy(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
-</UL>
-<BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int)
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)
-</UL>
-<BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadAccelRegs(unsigned char, unsigned char*, unsigned short)
-</UL>
-
-<P><STRONG><a name="[e8]"></a>DrvTIM::SetCompare(TIM_HandleTypeDef*, unsigned int, unsigned int)</STRONG> (Thumb, 108 bytes, Stack size 20 bytes, drv_tim.o(.text._ZN6DrvTIM10SetCompareEP17TIM_HandleTypeDefjj))
+<P><STRONG><a name="[ea]"></a>DrvTIM::SetCompare(TIM_HandleTypeDef*, unsigned int, unsigned int)</STRONG> (Thumb, 108 bytes, Stack size 20 bytes, drv_tim.o(.text._ZN6DrvTIM10SetCompareEP17TIM_HandleTypeDefjj))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = DrvTIM::SetCompare(TIM_HandleTypeDef*, unsigned int, unsigned int)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
+<BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::Update(float)
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::Init()
 </UL>
 
-<P><STRONG><a name="[ee]"></a>DrvTIM::StartPWM(TIM_HandleTypeDef*, unsigned int)</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, drv_tim.o(.text._ZN6DrvTIM8StartPWMEP17TIM_HandleTypeDefj))
+<P><STRONG><a name="[f0]"></a>DrvTIM::StartPWM(TIM_HandleTypeDef*, unsigned int)</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, drv_tim.o(.text._ZN6DrvTIM8StartPWMEP17TIM_HandleTypeDefj))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = DrvTIM::StartPWM(TIM_HandleTypeDef*, unsigned int) &rArr; HAL_TIM_PWM_Start &rArr; TIM_CCxChannelCmd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
@@ -1482,102 +1530,106 @@ Global Symbols
 <P><STRONG><a name="[5c]"></a>Control::SetFinLimit(float)</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, alg_control.o(.text._ZN7Control11SetFinLimitEf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Control::SetFinLimit(float) &rArr; __aeabi_fcmpgt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpgt
+<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpgt
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Init
 </UL>
 
-<P><STRONG><a name="[ff]"></a>Control::ComputeDtSec()</STRONG> (Thumb, 16 bytes, Stack size 4 bytes, alg_control.o(.text._ZN7Control12ComputeDtSecEv))
+<P><STRONG><a name="[105]"></a>Control::ComputeDtSec()</STRONG> (Thumb, 16 bytes, Stack size 4 bytes, alg_control.o(.text._ZN7Control12ComputeDtSecEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Control::ComputeDtSec()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
+<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
 </UL>
 
-<P><STRONG><a name="[fd]"></a>Control::Abs(float)</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, alg_control.o(.text._ZN7Control3AbsEf))
+<P><STRONG><a name="[103]"></a>Control::Abs(float)</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, alg_control.o(.text._ZN7Control3AbsEf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Control::Abs(float) &rArr; __aeabi_fcmpge
 </UL>
-<BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
+<BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
+<BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
 </UL>
 
-<P><STRONG><a name="[fe]"></a>Control::Clamp(float, float, float)</STRONG> (Thumb, 58 bytes, Stack size 24 bytes, alg_control.o(.text._ZN7Control5ClampEfff))
+<P><STRONG><a name="[104]"></a>Control::Clamp(float, float, float)</STRONG> (Thumb, 58 bytes, Stack size 24 bytes, alg_control.o(.text._ZN7Control5ClampEfff))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Control::Clamp(float, float, float) &rArr; __aeabi_fcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
+<BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
 </UL>
 
-<P><STRONG><a name="[d6]"></a>Control::Update(float, float, Vector3f const&, Vector3f const&)</STRONG> (Thumb, 566 bytes, Stack size 152 bytes, alg_control.o(.text._ZN7Control6UpdateEffRK8Vector3fS2_))
+<P><STRONG><a name="[d8]"></a>Control::Update(float, float, Vector3f const&, Vector3f const&)</STRONG> (Thumb, 566 bytes, Stack size 152 bytes, alg_control.o(.text._ZN7Control6UpdateEffRK8Vector3fS2_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = Control::Update(float, float, Vector3f const&, Vector3f const&) &rArr; Control::Clamp(float, float, float) &rArr; __aeabi_fcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Clamp(float, float, float)
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::ComputeDtSec()
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Clamp(float, float, float)
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::ComputeDtSec()
 </UL>
 <BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::AlgControl::Update(float, float, Vector3f const&, Vector3f const&)
 </UL>
 
-<P><STRONG><a name="[105]"></a>Control::Control()</STRONG> (Thumb, 112 bytes, Stack size 4 bytes, alg_control.o(.text._ZN7ControlC2Ev))
+<P><STRONG><a name="[10b]"></a>Control::Control()</STRONG> (Thumb, 112 bytes, Stack size 4 bytes, alg_control.o(.text._ZN7ControlC2Ev))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = Control::Control()
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxx_global_var_init.2
 </UL>
 
-<P><STRONG><a name="[152]"></a>Control::Control__sub_object()</STRONG> (Thumb, 112 bytes, Stack size 4 bytes, alg_control.o(.text._ZN7ControlC2Ev), UNUSED)
+<P><STRONG><a name="[158]"></a>Control::Control__sub_object()</STRONG> (Thumb, 112 bytes, Stack size 4 bytes, alg_control.o(.text._ZN7ControlC2Ev), UNUSED)
 
-<P><STRONG><a name="[f9]"></a>DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, drv_gpio.o(.text._ZN7DrvGPIO6SetPinEP12GPIO_TypeDeft))
+<P><STRONG><a name="[ff]"></a>DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short)</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, drv_gpio.o(.text._ZN7DrvGPIO6SetPinEP12GPIO_TypeDeft))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = DrvGPIO::SetPin(GPIO_TypeDef*, unsigned short) &rArr; HAL_GPIO_WritePin
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::ReadRegistersWithDummy(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
+<BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::AccelReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::GyroReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*)
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::AccelReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*)
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::Init()
 </UL>
 
-<P><STRONG><a name="[fa]"></a>DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, drv_gpio.o(.text._ZN7DrvGPIO8ResetPinEP12GPIO_TypeDeft))
+<P><STRONG><a name="[100]"></a>DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short)</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, drv_gpio.o(.text._ZN7DrvGPIO8ResetPinEP12GPIO_TypeDeft))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = DrvGPIO::ResetPin(GPIO_TypeDef*, unsigned short) &rArr; HAL_GPIO_WritePin
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::ReadRegistersWithDummy(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
+<BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::AccelReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short)
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::GyroReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*)
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::WriteRegister(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char)
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvSPI::AccelReadSingle(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*)
 </UL>
 
 <P><STRONG><a name="[6f]"></a>DrvUART::HandleRxEvent(__UART_HandleTypeDef*, unsigned short)</STRONG> (Thumb, 166 bytes, Stack size 32 bytes, drv_uart.o(.text._ZN7DrvUART13HandleRxEventEP20__UART_HandleTypeDeft))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = DrvUART::HandleRxEvent(__UART_HandleTypeDef*, unsigned short) &rArr; DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short) &rArr; HAL_UARTEx_ReceiveToIdle_DMA &rArr; UART_Start_Receive_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::FindHandlerIndex(__UART_HandleTypeDef*)
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::FindHandlerIndex(__UART_HandleTypeDef*)
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART_RxEventIRQHandler
 </UL>
 
-<P><STRONG><a name="[d8]"></a>DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, drv_uart.o(.text._ZN7DrvUART21StartReceive_DMA_IdleEP20__UART_HandleTypeDefPht))
+<P><STRONG><a name="[da]"></a>DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)</STRONG> (Thumb, 112 bytes, Stack size 24 bytes, drv_uart.o(.text._ZN7DrvUART21StartReceive_DMA_IdleEP20__UART_HandleTypeDefPht))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short) &rArr; HAL_UARTEx_ReceiveToIdle_DMA &rArr; UART_Start_Receive_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::FindHandlerIndex(__UART_HandleTypeDef*)
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::DisableDmaHalfTransfer(__UART_HandleTypeDef*)
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::FindHandlerIndex(__UART_HandleTypeDef*)
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::DisableDmaHalfTransfer(__UART_HandleTypeDef*)
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UARTEx_ReceiveToIdle_DMA
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::HandleRxEvent(__UART_HandleTypeDef*, unsigned short)
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::InitK230Rx()
 </UL>
 
-<P><STRONG><a name="[d7]"></a>DrvUART::RegisterRxEventHandler(DrvUART::RxEventHandler const&)</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, drv_uart.o(.text._ZN7DrvUART22RegisterRxEventHandlerERKNS_14RxEventHandlerE))
+<P><STRONG><a name="[d9]"></a>DrvUART::RegisterRxEventHandler(DrvUART::RxEventHandler const&)</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, drv_uart.o(.text._ZN7DrvUART22RegisterRxEventHandlerERKNS_14RxEventHandlerE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = DrvUART::RegisterRxEventHandler(DrvUART::RxEventHandler const&) &rArr; (anonymous namespace)::FindHandlerIndex(__UART_HandleTypeDef*)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::FindFreeHandlerIndex()
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::FindHandlerIndex(__UART_HandleTypeDef*)
+<BR>[Calls]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::FindFreeHandlerIndex()
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::FindHandlerIndex(__UART_HandleTypeDef*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::InitK230Rx()
 </UL>
@@ -1585,8 +1637,8 @@ Global Symbols
 <P><STRONG><a name="[5a]"></a>TempCtrl::Init()</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, dev_temp_ctrl.o(.text._ZN8TempCtrl4InitEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = TempCtrl::Init() &rArr; DrvTIM::StartPWM(TIM_HandleTypeDef*, unsigned int) &rArr; HAL_TIM_PWM_Start &rArr; TIM_CCxChannelCmd
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::SetCompare(TIM_HandleTypeDef*, unsigned int, unsigned int)
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::StartPWM(TIM_HandleTypeDef*, unsigned int)
+<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::SetCompare(TIM_HandleTypeDef*, unsigned int, unsigned int)
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::StartPWM(TIM_HandleTypeDef*, unsigned int)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Init
 </UL>
@@ -1594,14 +1646,14 @@ Global Symbols
 <P><STRONG><a name="[62]"></a>TempCtrl::Update(float)</STRONG> (Thumb, 342 bytes, Stack size 56 bytes, dev_temp_ctrl.o(.text._ZN8TempCtrl6UpdateEf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = TempCtrl::Update(float) &rArr; DrvTIM::SetCompare(TIM_HandleTypeDef*, unsigned int, unsigned int)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::SetCompare(TIM_HandleTypeDef*, unsigned int, unsigned int)
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvTIM::SetCompare(TIM_HandleTypeDef*, unsigned int, unsigned int)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
@@ -1612,50 +1664,50 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Init
 </UL>
 
-<P><STRONG><a name="[107]"></a>TempCtrl::TempCtrl(TIM_HandleTypeDef*, unsigned int, unsigned int)</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, dev_temp_ctrl.o(.text._ZN8TempCtrlC2EP17TIM_HandleTypeDefjj))
+<P><STRONG><a name="[10d]"></a>TempCtrl::TempCtrl(TIM_HandleTypeDef*, unsigned int, unsigned int)</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, dev_temp_ctrl.o(.text._ZN8TempCtrlC2EP17TIM_HandleTypeDefjj))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TempCtrl::TempCtrl(TIM_HandleTypeDef*, unsigned int, unsigned int)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxx_global_var_init.4
 </UL>
 
-<P><STRONG><a name="[153]"></a>TempCtrl::TempCtrl__sub_object(TIM_HandleTypeDef*, unsigned int, unsigned int)</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, dev_temp_ctrl.o(.text._ZN8TempCtrlC2EP17TIM_HandleTypeDefjj), UNUSED)
+<P><STRONG><a name="[159]"></a>TempCtrl::TempCtrl__sub_object(TIM_HandleTypeDef*, unsigned int, unsigned int)</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, dev_temp_ctrl.o(.text._ZN8TempCtrlC2EP17TIM_HandleTypeDefjj), UNUSED)
 
-<P><STRONG><a name="[dc]"></a>K230::HasValidCommand() const</STRONG> (Thumb, 16 bytes, Stack size 4 bytes, dev_k230.o(.text._ZNK4K23015HasValidCommandEv))
+<P><STRONG><a name="[de]"></a>K230::HasValidCommand() const</STRONG> (Thumb, 16 bytes, Stack size 4 bytes, dev_k230.o(.text._ZNK4K23015HasValidCommandEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = K230::HasValidCommand() const
 </UL>
 <BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::DevK230::IsOnline(unsigned int)
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::K230RxCallback(__UART_HandleTypeDef*, unsigned char*, unsigned short, void*)
 </UL>
 
-<P><STRONG><a name="[de]"></a>K230::GetGuidanceCommand() const</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, dev_k230.o(.text._ZNK4K23018GetGuidanceCommandEv))
+<P><STRONG><a name="[e0]"></a>K230::GetGuidanceCommand() const</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, dev_k230.o(.text._ZNK4K23018GetGuidanceCommandEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = K230::GetGuidanceCommand() const
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::DevK230::GetCommand()
 </UL>
 
-<P><STRONG><a name="[d5]"></a>Control::Mixer(float, float, float, float*) const</STRONG> (Thumb, 378 bytes, Stack size 56 bytes, alg_control.o(.text._ZNK7Control5MixerEfffPf))
+<P><STRONG><a name="[d7]"></a>Control::Mixer(float, float, float, float*) const</STRONG> (Thumb, 378 bytes, Stack size 56 bytes, alg_control.o(.text._ZNK7Control5MixerEfffPf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = Control::Mixer(float, float, float, float*) const &rArr; Control::Clamp(float, float, float) &rArr; __aeabi_fcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Abs(float)
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Clamp(float, float, float)
+<BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Abs(float)
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Clamp(float, float, float)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::AlgControl::Mixer(float, float, float, float*)
 </UL>
 
-<P><STRONG><a name="[e3]"></a>bool std::__2::__math::isfinite[abi:nn190000]&lang;float, 0&rang;(float)</STRONG> (Thumb, 24 bytes, Stack size 4 bytes, dev_k230.o(.text._ZNSt3__26__math8isfiniteB8nn190000IfTnNS_9enable_ifIXaasr13is_arithmeticIT_EE5valuesr14numeric_limitsIS3_EE12has_infinityEiE4typeELi0EEEbS3_))
+<P><STRONG><a name="[e5]"></a>bool std::__2::__math::isfinite[abi:nn190000]&lang;float, 0&rang;(float)</STRONG> (Thumb, 24 bytes, Stack size 4 bytes, dev_k230.o(.text._ZNSt3__26__math8isfiniteB8nn190000IfTnNS_9enable_ifIXaasr13is_arithmeticIT_EE5valuesr14numeric_limitsIS3_EE12has_infinityEiE4typeELi0EEEbS3_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = bool std::__2::__math::isfinite[abi:nn190000]&lang;float, 0&rang;(float)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::DecodeFrame(unsigned char const*)
+<BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::DecodeFrame(unsigned char const*)
 </UL>
 
 <P><STRONG><a name="[4a]"></a>main</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 648 + Unknown Stack Size
-<LI>Call Chain = main &rArr; Task_Loop &rArr; (anonymous namespace)::AppFlight::ControlLoop() &rArr; App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<LI>Call Chain = main &rArr; Task_Loop &rArr; (anonymous namespace)::AppFlight::ControlLoop() &rArr; App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Task_Loop
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Task_Init
@@ -1674,205 +1726,205 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[ec]"></a>__aeabi_fadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fadd))
+<P><STRONG><a name="[ee]"></a>__aeabi_fadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fadd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::AngleDegToPulseUs(float)
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::AngleDegToPulseUs(float)
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::Update(float)
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadTemperature(float*)
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
 </UL>
 
-<P><STRONG><a name="[108]"></a>_fadd</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fadd), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub1
+<P><STRONG><a name="[10e]"></a>_fadd</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fadd), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub1
 </UL>
 
-<P><STRONG><a name="[154]"></a>__aeabi_fcmpeq</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
+<P><STRONG><a name="[15a]"></a>__aeabi_fcmpeq</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
 
-<P><STRONG><a name="[10c]"></a>_feq</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
+<P><STRONG><a name="[112]"></a>_feq</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
 </UL>
 
-<P><STRONG><a name="[10e]"></a>_fneq</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
+<P><STRONG><a name="[114]"></a>_fneq</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
 </UL>
 
-<P><STRONG><a name="[fc]"></a>__aeabi_fcmpgt</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp))
+<P><STRONG><a name="[102]"></a>__aeabi_fcmpgt</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_fcmpgt
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::SetFinLimit(float)
 </UL>
 
-<P><STRONG><a name="[10f]"></a>_fgr</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpge
+<P><STRONG><a name="[115]"></a>_fgr</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpge
 </UL>
 
-<P><STRONG><a name="[dd]"></a>__aeabi_fcmpge</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp))
+<P><STRONG><a name="[df]"></a>__aeabi_fcmpge</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_fcmpge
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::ClampAngleDeg(float)
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::ClampAngleDeg(float)
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::Update(float)
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::Clamp(float, float, float)
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Abs(float)
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Clamp(float, float, float)
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Abs(float)
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Clamp(float, float, float)
 </UL>
 
-<P><STRONG><a name="[111]"></a>_fgeq</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpge
+<P><STRONG><a name="[117]"></a>_fgeq</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpge
 </UL>
 
-<P><STRONG><a name="[d9]"></a>__aeabi_fcmple</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp))
+<P><STRONG><a name="[db]"></a>__aeabi_fcmple</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_fcmple
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::ClampAngleDeg(float)
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::ClampAngleDeg(float)
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::Update(float)
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::Clamp(float, float, float)
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::IsFiniteFloat(float)
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Clamp(float, float, float)
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Clamp(float, float, float)
 </UL>
 
-<P><STRONG><a name="[112]"></a>_fleq</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
+<P><STRONG><a name="[118]"></a>_fleq</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
 </UL>
 
-<P><STRONG><a name="[da]"></a>__aeabi_fcmplt</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp))
+<P><STRONG><a name="[dc]"></a>__aeabi_fcmplt</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_fcmplt
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;(anonymous namespace)::IsFiniteFloat(float)
 </UL>
 
-<P><STRONG><a name="[114]"></a>_fls</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
+<P><STRONG><a name="[11a]"></a>_fls</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, fcmp.o(x$fpl$fcmp), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
 </UL>
 
-<P><STRONG><a name="[116]"></a>__fpl_fcmp_Inf</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, fcmpi.o(x$fpl$fcmpinf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpge
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
+<P><STRONG><a name="[11c]"></a>__fpl_fcmp_Inf</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, fcmpi.o(x$fpl$fcmpinf), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpge
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
 </UL>
 
-<P><STRONG><a name="[eb]"></a>__aeabi_fdiv</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fdiv.o(x$fpl$fdiv))
+<P><STRONG><a name="[ed]"></a>__aeabi_fdiv</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fdiv.o(x$fpl$fdiv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fdiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::AngleDegToPulseUs(float)
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::AngleDegToPulseUs(float)
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
 </UL>
 
-<P><STRONG><a name="[115]"></a>_fdiv</STRONG> (Thumb, 384 bytes, Stack size 16 bytes, fdiv.o(x$fpl$fdiv), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<P><STRONG><a name="[11b]"></a>_fdiv</STRONG> (Thumb, 384 bytes, Stack size 16 bytes, fdiv.o(x$fpl$fdiv), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
 </UL>
 
-<P><STRONG><a name="[155]"></a>__aeabi_cfcmpeq</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf), UNUSED)
+<P><STRONG><a name="[15b]"></a>__aeabi_cfcmpeq</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf), UNUSED)
 
-<P><STRONG><a name="[10d]"></a>_fcmpeq</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<P><STRONG><a name="[113]"></a>_fcmpeq</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fneq
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_feq
+<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fneq
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_feq
 </UL>
 
-<P><STRONG><a name="[ed]"></a>__aeabi_f2uiz</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, ffixu.o(x$fpl$ffixu))
+<P><STRONG><a name="[ef]"></a>__aeabi_f2uiz</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, ffixu.o(x$fpl$ffixu))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_f2uiz
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::Update(float)
 </UL>
 
-<P><STRONG><a name="[117]"></a>_ffixu</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, ffixu.o(x$fpl$ffixu), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<P><STRONG><a name="[11d]"></a>_ffixu</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, ffixu.o(x$fpl$ffixu), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
 </UL>
 
-<P><STRONG><a name="[f2]"></a>__aeabi_i2f</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$fflt))
-<BR><BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
+<P><STRONG><a name="[f4]"></a>__aeabi_i2f</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$fflt))
+<BR><BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadTemperature(float*)
 </UL>
 
-<P><STRONG><a name="[156]"></a>_fflt</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$fflt), UNUSED)
+<P><STRONG><a name="[15c]"></a>_fflt</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$fflt), UNUSED)
 
 <P><STRONG><a name="[69]"></a>__aeabi_ui2f</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$ffltu))
-<BR><BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
+<BR><BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::Update(float)
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
 
-<P><STRONG><a name="[157]"></a>_ffltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$ffltu), UNUSED)
+<P><STRONG><a name="[15d]"></a>_ffltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$ffltu), UNUSED)
 
-<P><STRONG><a name="[110]"></a>_fcmpge</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, fgeqf.o(x$fpl$fgeqf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<P><STRONG><a name="[116]"></a>_fcmpge</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, fgeqf.o(x$fpl$fgeqf), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fgeq
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fgr
-</UL>
-
-<P><STRONG><a name="[158]"></a>__aeabi_cfcmple</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
-
-<P><STRONG><a name="[113]"></a>_fcmple</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
-</UL>
-<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fls
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fleq
+<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fgeq
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fgr
 </UL>
 
-<P><STRONG><a name="[159]"></a>__fpl_fcmple_InfNaN</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fleqf.o(x$fpl$fleqf), UNUSED)
+<P><STRONG><a name="[15e]"></a>__aeabi_cfcmple</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
 
-<P><STRONG><a name="[ea]"></a>__aeabi_fmul</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fmul.o(x$fpl$fmul))
+<P><STRONG><a name="[119]"></a>_fcmple</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fls
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fleq
+</UL>
+
+<P><STRONG><a name="[15f]"></a>__fpl_fcmple_InfNaN</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fleqf.o(x$fpl$fleqf), UNUSED)
+
+<P><STRONG><a name="[ec]"></a>__aeabi_fmul</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fmul.o(x$fpl$fmul))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::AngleDegToPulseUs(float)
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::PulseUsToCompare(TIM_HandleTypeDef*, float)
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::AngleDegToPulseUs(float)
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::Update(float)
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadTemperature(float*)
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
 </UL>
 
-<P><STRONG><a name="[118]"></a>_fmul</STRONG> (Thumb, 258 bytes, Stack size 16 bytes, fmul.o(x$fpl$fmul), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<P><STRONG><a name="[11e]"></a>_fmul</STRONG> (Thumb, 258 bytes, Stack size 16 bytes, fmul.o(x$fpl$fmul), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
 </UL>
 
-<P><STRONG><a name="[10b]"></a>__fpl_fnaninf</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, fnaninf.o(x$fpl$fnaninf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpge
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
-<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ffixu
-<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
+<P><STRONG><a name="[111]"></a>__fpl_fnaninf</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, fnaninf.o(x$fpl$fnaninf), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpge
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
+<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ffixu
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
 </UL>
 
-<P><STRONG><a name="[10a]"></a>__fpl_fretinf</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, fretinf.o(x$fpl$fretinf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
-<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
+<P><STRONG><a name="[110]"></a>__fpl_fretinf</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, fretinf.o(x$fpl$fretinf), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
 </UL>
 
-<P><STRONG><a name="[f3]"></a>__aeabi_fsub</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fsub))
+<P><STRONG><a name="[f5]"></a>__aeabi_fsub</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fsub))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fsub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
+<BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::Update(float)
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
 </UL>
 
-<P><STRONG><a name="[119]"></a>_fsub</STRONG> (Thumb, 234 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fsub), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
-<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd1
+<P><STRONG><a name="[11f]"></a>_fsub</STRONG> (Thumb, 234 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fsub), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd1
 </UL>
 <P>
 <H3>
@@ -2074,7 +2126,7 @@ Local Symbols
 <P><STRONG><a name="[cf]"></a>__cxx_global_var_init</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, app_flight.o(.text.__cxx_global_var_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = __cxx_global_var_init &rArr; Bmi088::Bmi088(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, GPIO_TypeDef*, unsigned short)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::Bmi088(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, GPIO_TypeDef*, unsigned short)
+<BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::Bmi088(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, GPIO_TypeDef*, unsigned short)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GLOBAL__sub_I_app_flight.cpp
 </UL>
@@ -2082,7 +2134,7 @@ Local Symbols
 <P><STRONG><a name="[d0]"></a>__cxx_global_var_init.1</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, app_flight.o(.text.__cxx_global_var_init.1))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = __cxx_global_var_init.1 &rArr; K230::K230()
 </UL>
-<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::K230()
+<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::K230()
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GLOBAL__sub_I_app_flight.cpp
 </UL>
@@ -2090,7 +2142,7 @@ Local Symbols
 <P><STRONG><a name="[d1]"></a>__cxx_global_var_init.2</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, app_flight.o(.text.__cxx_global_var_init.2))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = __cxx_global_var_init.2 &rArr; Control::Control()
 </UL>
-<BR>[Calls]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Control()
+<BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Control()
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GLOBAL__sub_I_app_flight.cpp
 </UL>
@@ -2098,7 +2150,7 @@ Local Symbols
 <P><STRONG><a name="[d2]"></a>__cxx_global_var_init.3</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, app_flight.o(.text.__cxx_global_var_init.3))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __cxx_global_var_init.3 &rArr; Servo::Servo(TIM_HandleTypeDef*)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::Servo(TIM_HandleTypeDef*)
+<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::Servo(TIM_HandleTypeDef*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GLOBAL__sub_I_app_flight.cpp
 </UL>
@@ -2106,7 +2158,7 @@ Local Symbols
 <P><STRONG><a name="[d3]"></a>__cxx_global_var_init.4</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, app_flight.o(.text.__cxx_global_var_init.4))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __cxx_global_var_init.4 &rArr; TempCtrl::TempCtrl(TIM_HandleTypeDef*, unsigned int, unsigned int)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::TempCtrl(TIM_HandleTypeDef*, unsigned int, unsigned int)
+<BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempCtrl::TempCtrl(TIM_HandleTypeDef*, unsigned int, unsigned int)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_GLOBAL__sub_I_app_flight.cpp
 </UL>
@@ -2114,8 +2166,8 @@ Local Symbols
 <P><STRONG><a name="[59]"></a>(anonymous namespace)::InitK230Rx()</STRONG> (Thumb, 110 bytes, Stack size 32 bytes, app_flight.o(.text._ZN12_GLOBAL__N_110InitK230RxEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = (anonymous namespace)::InitK230Rx() &rArr; DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short) &rArr; HAL_UARTEx_ReceiveToIdle_DMA &rArr; UART_Start_Receive_DMA &rArr; HAL_DMA_Start_IT &rArr; DMA_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::RegisterRxEventHandler(DrvUART::RxEventHandler const&)
+<BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::RegisterRxEventHandler(DrvUART::RxEventHandler const&)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Init
 </UL>
@@ -2124,17 +2176,17 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = (anonymous namespace)::K230RxCallback(__UART_HandleTypeDef*, unsigned char*, unsigned short, void*) &rArr; K230::ParseProtocol(unsigned char*, unsigned short) &rArr; K230::DecodeFrame(unsigned char const*) &rArr; K230::CalcChecksum(unsigned char const*, unsigned short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::ParseProtocol(unsigned char*, unsigned short)
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::HasValidCommand() const
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::ParseProtocol(unsigned char*, unsigned short)
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::HasValidCommand() const
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> app_flight.o(.text._ZN12_GLOBAL__N_110InitK230RxEv)
 </UL>
 <P><STRONG><a name="[5f]"></a>(anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&)</STRONG> (Thumb, 96 bytes, Stack size 64 bytes, app_flight.o(.text._ZN12_GLOBAL__N_19DevBmi0884ReadER8Vector3fS2_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 448 + Unknown Stack Size
-<LI>Call Chain = (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<LI>Call Chain = (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bmi088::ReadSensor(Bmi088::Data*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
@@ -2142,7 +2194,7 @@ Local Symbols
 <P><STRONG><a name="[60]"></a>(anonymous namespace)::DevServo::SetFinAngles(float*)</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, app_flight.o(.text._ZN12_GLOBAL__N_18DevServo12SetFinAnglesEPf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = (anonymous namespace)::DevServo::SetFinAngles(float*) &rArr; Servo::SetFinAngles(float*) &rArr; Servo::PulseUsToCompare(TIM_HandleTypeDef*, float) &rArr; Servo::GetTimerClockHz(TIM_TypeDef*) &rArr; HAL_RCC_GetPCLK2Freq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
+<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo::SetFinAngles(float*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
@@ -2150,7 +2202,7 @@ Local Symbols
 <P><STRONG><a name="[63]"></a>(anonymous namespace)::DevK230::IsOnline(unsigned int)</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, app_flight.o(.text._ZN12_GLOBAL__N_17DevK2308IsOnlineEj))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = (anonymous namespace)::DevK230::IsOnline(unsigned int) &rArr; K230::HasValidCommand() const
 </UL>
-<BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::HasValidCommand() const
+<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::HasValidCommand() const
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
@@ -2158,7 +2210,7 @@ Local Symbols
 <P><STRONG><a name="[64]"></a>(anonymous namespace)::DevK230::GetCommand()</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, app_flight.o(.text._ZN12_GLOBAL__N_17DevK23010GetCommandEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = (anonymous namespace)::DevK230::GetCommand() &rArr; K230::GetGuidanceCommand() const
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::GetGuidanceCommand() const
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;K230::GetGuidanceCommand() const
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
@@ -2166,8 +2218,8 @@ Local Symbols
 <P><STRONG><a name="[65]"></a>(anonymous namespace)::IsFiniteFloat(float)</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, app_flight.o(.text._ZN12_GLOBAL__N_113IsFiniteFloatEf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = (anonymous namespace)::IsFiniteFloat(float) &rArr; __aeabi_fcmplt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmplt
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
+<BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmplt
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
@@ -2175,8 +2227,8 @@ Local Symbols
 <P><STRONG><a name="[66]"></a>(anonymous namespace)::Clamp(float, float, float)</STRONG> (Thumb, 58 bytes, Stack size 24 bytes, app_flight.o(.text._ZN12_GLOBAL__N_15ClampEfff))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = (anonymous namespace)::Clamp(float, float, float) &rArr; __aeabi_fcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmple
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
@@ -2184,7 +2236,7 @@ Local Symbols
 <P><STRONG><a name="[67]"></a>(anonymous namespace)::AlgControl::Update(float, float, Vector3f const&, Vector3f const&)</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, app_flight.o(.text._ZN12_GLOBAL__N_110AlgControl6UpdateEffRK8Vector3fS3_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = (anonymous namespace)::AlgControl::Update(float, float, Vector3f const&, Vector3f const&) &rArr; Control::Update(float, float, Vector3f const&, Vector3f const&) &rArr; Control::Clamp(float, float, float) &rArr; __aeabi_fcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
+<BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Update(float, float, Vector3f const&, Vector3f const&)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
@@ -2192,7 +2244,7 @@ Local Symbols
 <P><STRONG><a name="[68]"></a>(anonymous namespace)::AlgControl::Mixer(float, float, float, float*)</STRONG> (Thumb, 42 bytes, Stack size 32 bytes, app_flight.o(.text._ZN12_GLOBAL__N_110AlgControl5MixerEfffPf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = (anonymous namespace)::AlgControl::Mixer(float, float, float, float*) &rArr; Control::Mixer(float, float, float, float*) const &rArr; Control::Clamp(float, float, float) &rArr; __aeabi_fcmple
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
+<BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Control::Mixer(float, float, float, float*) const
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
@@ -2210,7 +2262,7 @@ Local Symbols
 </UL>
 <P><STRONG><a name="[c8]"></a>(anonymous namespace)::AppFlight::ControlLoop()</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, app_task.o(.text._ZN12_GLOBAL__N_19AppFlight11ControlLoopEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 616 + Unknown Stack Size
-<LI>Call Chain = (anonymous namespace)::AppFlight::ControlLoop() &rArr; App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::ReadRegisters(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
+<LI>Call Chain = (anonymous namespace)::AppFlight::ControlLoop() &rArr; App_Flight_Task &rArr; (anonymous namespace)::DevBmi088::Read(Vector3f&, Vector3f&) &rArr; Bmi088::ReadSensor(Bmi088::Data*) &rArr; Bmi088::ReadGyroMultiRegs(unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::GyroReadMulti(__SPI_HandleTypeDef*, GPIO_TypeDef*, unsigned short, unsigned char, unsigned char*, unsigned short) &rArr; DrvSPI::TransmitReceive(__SPI_HandleTypeDef*, unsigned char*, unsigned char*, unsigned short, unsigned int) &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;App_Flight_Task
 </UL>
@@ -2221,32 +2273,40 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Task_Loop
 </UL>
 
-<P><STRONG><a name="[101]"></a>(anonymous namespace)::DisableDmaHalfTransfer(__UART_HandleTypeDef*)</STRONG> (Thumb, 38 bytes, Stack size 4 bytes, drv_uart.o(.text._ZN12_GLOBAL__N_122DisableDmaHalfTransferEP20__UART_HandleTypeDef))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = (anonymous namespace)::DisableDmaHalfTransfer(__UART_HandleTypeDef*)
+<P><STRONG><a name="[d6]"></a>(anonymous namespace)::GetSysTickClockHz()</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, drv_delay.o(.text._ZN12_GLOBAL__N_117GetSysTickClockHzEv))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = (anonymous namespace)::GetSysTickClockHz()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)
+<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
+</UL>
+<BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay_us(unsigned int)
 </UL>
 
-<P><STRONG><a name="[100]"></a>(anonymous namespace)::FindHandlerIndex(__UART_HandleTypeDef*)</STRONG> (Thumb, 86 bytes, Stack size 12 bytes, drv_uart.o(.text._ZN12_GLOBAL__N_116FindHandlerIndexEP20__UART_HandleTypeDef))
+<P><STRONG><a name="[107]"></a>(anonymous namespace)::DisableDmaHalfTransfer(__UART_HandleTypeDef*)</STRONG> (Thumb, 38 bytes, Stack size 4 bytes, drv_uart.o(.text._ZN12_GLOBAL__N_122DisableDmaHalfTransferEP20__UART_HandleTypeDef))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = (anonymous namespace)::DisableDmaHalfTransfer(__UART_HandleTypeDef*)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)
+</UL>
+
+<P><STRONG><a name="[106]"></a>(anonymous namespace)::FindHandlerIndex(__UART_HandleTypeDef*)</STRONG> (Thumb, 86 bytes, Stack size 12 bytes, drv_uart.o(.text._ZN12_GLOBAL__N_116FindHandlerIndexEP20__UART_HandleTypeDef))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = (anonymous namespace)::FindHandlerIndex(__UART_HandleTypeDef*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::HandleRxEvent(__UART_HandleTypeDef*, unsigned short)
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::RegisterRxEventHandler(DrvUART::RxEventHandler const&)
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::StartReceive_DMA_Idle(__UART_HandleTypeDef*, unsigned char*, unsigned short)
+<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::RegisterRxEventHandler(DrvUART::RxEventHandler const&)
 </UL>
 
-<P><STRONG><a name="[102]"></a>(anonymous namespace)::FindFreeHandlerIndex()</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, drv_uart.o(.text._ZN12_GLOBAL__N_120FindFreeHandlerIndexEv))
+<P><STRONG><a name="[108]"></a>(anonymous namespace)::FindFreeHandlerIndex()</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, drv_uart.o(.text._ZN12_GLOBAL__N_120FindFreeHandlerIndexEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = (anonymous namespace)::FindFreeHandlerIndex()
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::RegisterRxEventHandler(DrvUART::RxEventHandler const&)
+<BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DrvUART::RegisterRxEventHandler(DrvUART::RxEventHandler const&)
 </UL>
 
-<P><STRONG><a name="[11a]"></a>_fadd1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, faddsub_clz.o(x$fpl$fadd), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub
+<P><STRONG><a name="[120]"></a>_fadd1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, faddsub_clz.o(x$fpl$fadd), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub
 </UL>
 
-<P><STRONG><a name="[109]"></a>_fsub1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, faddsub_clz.o(x$fpl$fsub), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
+<P><STRONG><a name="[10f]"></a>_fsub1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, faddsub_clz.o(x$fpl$fsub), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
 </UL>
 <P>
 <H3>

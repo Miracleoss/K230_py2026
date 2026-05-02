@@ -229,7 +229,7 @@ extern "C" void App_Flight_Task(void)
 
 	// Vofa+ 输出调试数据（10Hz）
 	// ch 0-2: filtered accel    ch 3-5: filtered gyro
-	// ch 6: temperature (℃)    ch 7: heater PWM duty
+	// ch 6: target_temperature (℃)    ch 7: now_temperature (℃)
 	static uint8_t vofa_div = 0U;
 	if (++vofa_div >= 10U) {
 		vofa_div = 0U;
