@@ -1,0 +1,15 @@
+# 注意：CODEOWNERS 里的用户名必须是真实的 GitHub 账号，写错不会报错，
+# 只是不会自动请求 review。生效前把带 TODO 的行改成你同学的实际用户名。
+
+# 下位机
+/firmware/          @Miracleoss
+
+# 上位机
+# TODO 换成同学的 GitHub 用户名后取消下一行注释
+# /host/            @psh
+
+# 跨端合同：改这两份必须双方都看过
+/docs/protocol.md           @Miracleoss
+# TODO 同上
+# /docs/protocol.md         @psh
+/docs/hardware-v33-v34.md   @Miracleoss

@@ -1,0 +1,15 @@
+# 统一行尾处理：仓库内部统一存 LF，检出时按各人系统转换。
+# 目的是避免 Windows（Keil）和 Linux（A133）来回提交时产生整文件的假 diff。
+* text=auto
+
+# 明确按二进制处理，禁止行尾转换
+*.bin   binary
+*.hex   binary
+*.axf   binary
+*.o     binary
+*.a     binary
+*.lib   binary
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.zip   binary

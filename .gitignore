@@ -1,0 +1,106 @@
+# ===== 制导飞镖 shared repo =====
+# 原则：源码 + 工程配置进库；编译产物、IDE 本地状态、日志一律不进库。
+# 保留：*.ioc  .mxproject  *.uvprojx  *.uvmpw  *.sct  *.ld  startup_*.s
+
+# ---- Keil / MDK-ARM 编译产物 ----
+MDK-ARM/Objects/
+MDK-ARM/Listings/
+MDK-ARM/DebugConfig/
+MDK-ARM/RTE/
+MDK-ARM/output/
+MDK-ARM/*/*.o
+MDK-ARM/*/*.d
+MDK-ARM/*/*.crf
+MDK-ARM/*/*.dep
+MDK-ARM/*/*.lnp
+MDK-ARM/*/*.axf
+MDK-ARM/*/*.hex
+MDK-ARM/*/*.map
+MDK-ARM/*/*.htm
+MDK-ARM/*/*.sct.bak
+*.o
+*.obj
+*.d
+*.dep
+*.axf
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.crf
+*.lnp
+*.htm
+*.srec
+*.dis
+*.su
+*.cyclo
+*.ddk
+*.edk
+*.mpf
+*.mpj
+*.omf
+*.plg
+*.rpt
+*.__i
+*.tra
+*.iex
+*.bak
+
+# ---- Keil 本地用户状态（每个机器不一样，绝不能进库）----
+*.uvguix.*
+*.uvgui.*
+*.uvopt
+*.uvoptx
+*.Administrator
+*.jdebug.user
+MDK-ARM/.pack/
+
+# ---- J-Link 日志 ----
+JLinkLog.txt
+MDK-ARM/JLinkLog.txt
+
+# ---- Keil 自动下载的器件包缓存（每台机器自己重新下载即可，绝不能进库）----
+# 每个 .cmsis/ 下会塞 300+ 个各内核的启动文件与 SVD，纯缓存
+# 注意：带路径的规则只匹配仓库根，这两套工程在 firmware/vXX/ 下，所以必须用无路径写法
+.cmsis/
+.pack/
+
+# ---- EIDE 插件本地配置（env.ini 里是各人机器上的绝对路径）----
+.eide/
+
+# ---- 各类 AI 协作工具的中间工作产物 ----
+.superpowers/
+
+# ---- VSCode 本地文件（团队共享的配置显式放行）----
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/c_cpp_properties.json
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# ---- 上位机 / Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+*.so
+
+# ---- 系统与编辑器临时文件 ----
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+*.swp
+.idea/
+.worktrees/
+
+# ---- 明确不进库的大件（A133 SDK 通过脚本拉取，见 docs/build.md）----
+sdk/
+*.tar.gz
+*.tar.bz2
+*.7z
