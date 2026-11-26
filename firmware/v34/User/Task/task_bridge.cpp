@@ -610,7 +610,7 @@ void Task_Loop(void)
     // 应用机体控制指令
     control_output_result = dart_system.ApplyBodyControlCommand(command);
 
-    // 飞镖发光装置按键快捷切色检测（PC13 低电平保持 10 s 触发切换）
+    // 飞镖发光装置按键快捷切色检测（PC13 低电平保持 5 s 触发切换）
     if (dart_light_key.Update(now_ms)) {
         ++dart_light_key_toggle_count;
         dart_light_current_team = (dart_light_current_team == DartLightTeam::Red)

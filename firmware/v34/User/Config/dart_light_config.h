@@ -18,7 +18,7 @@ static const uint32_t kDartLightStatusQueryMs         = 2000U;              ///<
  * @brief PC13 按键快捷切色配置
  */
 static const uint32_t kDartLightKeyDebounceMs         = 20U;                ///< 按键软件消抖稳定时间（20 ms）
-static const uint32_t kDartLightKeyHoldMs             = 10000U;              ///< 触发切色所需的低电平保持时间（10s）
+static const uint32_t kDartLightKeyHoldMs             = 5000U;              ///< 触发切色所需的低电平保持时间（5s）
 
 #endif /* USER_CONFIG_DART_LIGHT_CONFIG_H */
 
