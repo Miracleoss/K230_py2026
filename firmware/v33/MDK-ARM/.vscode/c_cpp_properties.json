@@ -1,18 +1,19 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "A133P_Dart",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
             "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
+                "USE_HAL_DRIVER",
+                "STM32F405xx"
             ],
-            "compileCommands": [
-                "D:\\Work_stm\\ZLLCProject\\A133P_Dart\\MDK-ARM\\build\\A133P_Dart\\compile_commands.json"
-            ]
+            "compilerPath": "",
+            "cStandard": "c99",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "gcc-arm",
+            "compileCommands": "${workspaceFolder}/build/A133P_Dart/compile_commands.json"
         }
     ],
     "version": 4
